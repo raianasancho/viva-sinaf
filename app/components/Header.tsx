@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { userAgent } from 'next/server';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,8 +19,9 @@ export default function Header() {
     document.body.style.overflow = isMenuOpen ? 'auto' : 'hidden';
   };
 
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#1B3B6B]">
+    <header className="fixed top-0 left-0 right-0 z-30 bg-[#1B3B6B] mr-[15px]">
       <div className="container mx-auto px-6">
         <nav className="flex items-center justify-between h-[70px]">
           <Link href="/" className="flex items-center self-start mt-[5px]">
@@ -60,7 +62,7 @@ export default function Header() {
           </div>
 
           <button           
-            className="hamburger-button xl:hidden text-white z-[60]" 
+            className="hamburger-button xl:hidden text-white z-40" 
             onClick={toggleMenu}
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
           >
@@ -80,7 +82,7 @@ export default function Header() {
       {/* Overlay */}
       {isMenuOpen && (
         <div 
-          className="fixed inset-0 bg-black bg-opacity-50 z-40 xl:hidden"
+          className="fixed inset-0 bg-black bg-opacity-50 z-20 xl:hidden"
           onClick={toggleMenu}
         />
       )}

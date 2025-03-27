@@ -138,7 +138,7 @@
 }
 
 .steps-section .container {
-  @apply rounded-lg bg-[--primary-yellow] p-8 xl:p-16;
+  @apply rounded-xl bg-[--primary-yellow] p-8 xl:p-16;
 }
 
 .store-badges {
@@ -273,7 +273,7 @@
 
 /* FAQ Section */
 .faq-section {
-  @apply bg-[--primary-gray];
+  @apply pb-0 bg-[--primary-gray];
 }
 
 .faq-list {

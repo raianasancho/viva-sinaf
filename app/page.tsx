@@ -76,11 +76,8 @@ export default function Home() {
 
   return (
     <>
-      <Header />
-      <main className="snap-y snap-mandatory h-screen overflow-y-auto">
-        {/* Navigation Dots */}
-        <div ref={navigationRef} className="hidden xl:fixed right-4 top-1/2 transform -translate-y-1/2 z-50 space-y-2" />
-
+      <main className="snap-y snap-mandatory h-screen overflow-y-auto relative">
+        <Header />       
         {/* Hero Section */}
         <section
           id="inicio"
@@ -98,7 +95,7 @@ export default function Home() {
                 Clique no botão de loja compatível com seu celular e baixe o app!*
               </p>
               <div className="flex-base">
-                <Link href="https://play.google.com/store">
+                <Link href={process.env.NEXT_PUBLIC_PLAY_STORE_URL as string} target='_blank'>
                   <Image
                     src="/google-play.png"
                     alt="Disponível no Google Play"
@@ -106,7 +103,7 @@ export default function Home() {
                     height={60}
                   />
                 </Link>
-                <Link href="https://apps.apple.com">
+                <Link href={process.env.NEXT_PUBLIC_APP_STORE_URL as string} target='_blank'>
                   <Image
                     src="/app-store.png"
                     alt="Baixar na App Store"
@@ -147,7 +144,7 @@ export default function Home() {
               Faça o download clicando no botão Google play para celulares Android ou na Apple para celulares Iphone.
             </p>
             <div className="store-badges">
-              <Link href="https://play.google.com/store" className="hover:opacity-90 transition-opacity">
+              <Link href={process.env.NEXT_PUBLIC_PLAY_STORE_URL as string} className="hover:opacity-90 transition-opacity" target='_blank'>
                 <Image
                   src="/google-play-badge.png"
                   alt="Disponível no Google Play"
@@ -156,7 +153,7 @@ export default function Home() {
                   className="h-auto"
                 />
               </Link>
-              <Link href="https://apps.apple.com" className="hover:opacity-90 transition-opacity">
+              <Link href={process.env.NEXT_PUBLIC_APP_STORE_URL as string} className="hover:opacity-90 transition-opacity" target='_blank' >
                 <Image
                   src="/app-store-badge.png"
                   alt="Baixar na App Store"
