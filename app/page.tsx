@@ -76,7 +76,7 @@ export default function Home() {
 
   return (
     <>
-      <main className="snap-y snap-mandatory h-screen overflow-y-auto relative">
+      <main className="snap-y snap-mandatory h-[calc(100vh-var(--header-height))] overflow-y-auto relative mt-[--header-height]">
         <Header />       
         {/* Hero Section */}
         <section

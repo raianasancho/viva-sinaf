@@ -3,11 +3,9 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { isMobile } from '../hooks/isMobile';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const deviceIsMobile = isMobile();
   
   // Ensure menu is closed when component mounts
   useEffect(() => {
@@ -22,7 +20,7 @@ export default function Header() {
 
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-30 bg-[#1B3B6B] ${!deviceIsMobile ? 'mr-[15px]' : ''}`}>
+    <header className={`fixed top-0 left-0 right-0 z-30 bg-[#1B3B6B]`}>
       <div className="container mx-auto px-6">
         <nav className="flex items-center justify-between h-[70px]">
           <Link href="#inicio" className="flex items-center self-start mt-[5px]">
