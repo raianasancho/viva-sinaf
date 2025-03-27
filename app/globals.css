@@ -128,8 +128,8 @@
 }
 
 /* Steps Section */
-.steps-section {
-  padding:0;
+.steps-section {  
+  padding: calc(var(--header-height)) 0 0;
 }
 @media (min-width: 80rem) {  
   .steps-section {
@@ -138,7 +138,7 @@
 }
 
 .steps-section .container {
-  @apply rounded-xl bg-[--primary-yellow] p-8 xl:p-16;
+  @apply xl:rounded-xl bg-[--primary-yellow] p-8 xl:p-16;
 }
 
 .store-badges {

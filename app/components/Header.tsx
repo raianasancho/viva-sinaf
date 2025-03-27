@@ -3,11 +3,12 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { userAgent } from 'next/server';
+import { isMobile } from '../hooks/isMobile';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const deviceIsMobile = isMobile();
+  
   // Ensure menu is closed when component mounts
   useEffect(() => {
     document.body.style.overflow = 'auto';
@@ -21,10 +22,10 @@ export default function Header() {
 
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-30 bg-[#1B3B6B] mr-[15px]">
+    <header className={`fixed top-0 left-0 right-0 z-30 bg-[#1B3B6B] ${!deviceIsMobile ? 'mr-[15px]' : ''}`}>
       <div className="container mx-auto px-6">
         <nav className="flex items-center justify-between h-[70px]">
-          <Link href="/" className="flex items-center self-start mt-[5px]">
+          <Link href="#inicio" className="flex items-center self-start mt-[5px]">
             <Image
               src="/logo-viva-sinaf.png"
               alt="Viva Sinaf"
@@ -54,7 +55,8 @@ export default function Header() {
               FAQ
             </Link>
             <Link 
-              href="#como-funciona" 
+              href="#como-funciona"
+              onClick={toggleMenu} 
               className="bg-[--primary-blue] text-[--primary-yellow] text-2xl xl:bg-[--primary-yellow] xl:text-[--primary-blue] px-8 py-4 xl:px-4 xl:py-2 rounded-lg xl:rounded font-medium xl:text-base xl:hover:bg-yellow-500 transition-colors inline-block"
             >
               Quero fazer parte
@@ -62,7 +64,7 @@ export default function Header() {
           </div>
 
           <button           
-            className="hamburger-button xl:hidden text-white z-40" 
+            className="hamburger-button xl:hidden text-white z-[100]" 
             onClick={toggleMenu}
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
           >
