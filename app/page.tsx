@@ -782,13 +782,13 @@ export default function Home() {
                   atendimento.vivasinaf@vivasinaf.com.br
                 </a>
                 <a 
-                  href="/politica-de-privacidade" 
-                  className="footer-link">
+                  href="https://vivasinaf.com.br/politica-de-privacidade/" 
+                  className="footer-link" target='_blank'>
                   Política de Privacidade
                 </a>
                 <a 
-                  href="/termo-de-consentimento" 
-                  className="footer-link">
+                  href="https://vivasinaf.com.br/termo/" 
+                  className="footer-link" target='_blank'>
                   Termo de Consentimento para Tratamento de Dados Pessoais
                 </a>
               </div>
