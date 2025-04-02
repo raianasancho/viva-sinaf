@@ -684,43 +684,53 @@ export default function Home() {
                 <AccordionItem value="item-1" className="faq-item">
                   <AccordionTrigger>Para quem é o Viva Sinaf?</AccordionTrigger>
                   <AccordionContent>
-                    Adipiscing ac lacus vel sed sed sed tincidunt at. Laoreet consequat donec id fermentum. Metus, tortor tellus ornare mauris, convallis quis. Tristique vulputate enim, vitae sodales nis! enim est. Ut diam volutpat, enim convallis. Pulvinar posuere gravida vitae fringilla eu tellus neque est feugiat.
+                    <p>O Viva Sinaf é destinado aos segurados e dependentes da Sinaf Seguros.</p>
                   </AccordionContent>
                 </AccordionItem>
 
                 <AccordionItem value="item-2" className="faq-item">
                   <AccordionTrigger>
-                    Alguma coisa relacionada ao acesso do conjugue e dependente (Tem direito e você pode convidar)
+                  O que é um clube de vantagens?
                   </AccordionTrigger>
                   <AccordionContent>
-                    Adipiscing ac lacus vel sed sed sed tincidunt at. Laoreet consequat donec id fermentum. Metus, tortor tellus ornare mauris, convallis quis. Tristique vulputate enim, vitae sodales nis! enim est. Ut diam volutpat, enim convallis. Pulvinar posuere gravida vitae fringilla eu tellus neque est feugiat.
+                    <p>Um clube de vantagens, como o Viva Sinaf, é um programa que oferece diversos benefícios exclusivos para seus membros.</p>                  
+                    <p>Esses benefícios podem ser usufruídos a qualquer momento com a utilização do aplicativo Viva Sinaf.</p>
                   </AccordionContent>
                 </AccordionItem>
 
                 <AccordionItem value="item-3" className="faq-item">
                   <AccordionTrigger>
-                    Varius ultricies molestie tellus fermentum, viverra ipsum scelerisque etiam lorem?
+                    Como envio convite para os meus dependentes?
                   </AccordionTrigger>
                   <AccordionContent>
-                    Adipiscing ac lacus vel sed sed sed tincidunt at. Laoreet consequat donec id fermentum. Metus, tortor tellus ornare mauris, convallis quis.
+                    <p>Ao se cadastrar no aplicativo, o titular pode enviar o convite aos seus dependentes acessando a área “minha conta” e clicando em “dependentes”.</p>  
+                    <p>Os dependentes recebem o convite por whatsapp e já podem se cadastrar e acessar o aplicativo.</p>
                   </AccordionContent>
                 </AccordionItem>
 
                 <AccordionItem value="item-4" className="faq-item">
                   <AccordionTrigger>
-                    Nulla etiam vitae, at sagittis, nibh ultrices mattis feugiat faucibus?
+                    Quais benefícios já estão disponíveis no Viva Sinaf?
                   </AccordionTrigger>
                   <AccordionContent>
-                    Adipiscing ac lacus vel sed sed sed tincidunt at. Laoreet consequat donec id fermentum. Metus, tortor tellus ornare mauris, convallis quis.
+                    <p>Já estão disponíveis para uso imediato o “Alô Doutor”, além de diversos descontos em exames laboratoriais e de imagens na rede Bronstein e descontos em farmácias.</p>
                   </AccordionContent>
                 </AccordionItem>
 
                 <AccordionItem value="item-5" className="faq-item">
                   <AccordionTrigger>
-                    Sagittis consectetur gravida nec turpis eros, id sit et, dictum?
+                  O que é um aconselhamento médico por telefone?
                   </AccordionTrigger>
                   <AccordionContent>
-                    Adipiscing ac lacus vel sed sed sed tincidunt at. Laoreet consequat donec id fermentum. Metus, tortor tellus ornare mauris, convallis quis.
+                    <p>É uma primeira orientação médica que pode ser realizada nos seguintes casos:</p>
+                    <ul className='list-disc list-inside'>
+                      <li>Sempre que tiver dúvidas relacionadas a doenças e sintomas;</li>
+                      <li>Quando tiver dúvidas sobre medicações, dosagens e reações adversas;</li>
+                      <li>Gestantes podem tirar dúvidas sobre gravidez;</li>
+                      <li>Para sanar dúvidas sobre qual especialidade de médico procurar;</li>
+                      <li>Quando tiver dúvidas sobre doenças crônicas;</li>
+                      <li>Para buscar orientações sobre situações de urgência e emergência médica.</li>
+                    </ul>
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
