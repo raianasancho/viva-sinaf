@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,394 +10,87 @@
   --primary-gray: #F3F1F1;
   --text-dark: #333333;
   --header-height: 70px;
+  --radius: 0.5rem;
+  --font-roboto: "Roboto", sans-serif; 
 }
 
-@layer base {
-  html {
-    font-family: 'Roboto', system-ui, sans-serif;
-  }
-
+@layer base { 
   * {
     @apply border-border scroll-smooth;
+    font-family: var(--font-roboto);
   }
   
   body {
     @apply bg-background text-[--text-dark] bg-white overflow-hidden;
+  } 
+}
+
+  @layer components {  
+  .container-viva {
+    @apply max-w-[1200px] mx-auto px-4 w-full;
   }
-}
-
-/* Common Components */
-.flex-base{
- @apply flex gap-4; 
-}
-
-.container {
-  @apply max-w-[1200px] mx-auto px-4;
-}
-
-.section {
-  @apply pt-[calc(var(--header-height)+2rem)] pb-16 flex items-center relative;
-}
-
-.title {
-  @apply text-[38px] font-[800] leading-tight relative mb-4;
-}
-
-.title-white{
-  @apply title text-white pl-6;
-}
-
-.title-blue{
-  @apply title text-[--primary-blue] pl-6;
-}
-
-.before-title-yellow::before {
-  @apply before-title bg-[--primary-yellow];
-}
-
-.before-title-gray::before {
-  @apply before-title bg-[--primary-gray];
-}
-
-.before-title {
-  @apply content-[''] w-[5px] h-[80%] inline-block absolute top-[10%] left-0;
-}
-
-.button-primary {
-  @apply w-full xl:w-[320px] h-[64px] py-4 px-8 rounded-md font-medium transition-all duration-300 text-center flex items-center justify-center inline-block  no-underline hover:no-underline;
-}
-
-.button-fill {
-  @apply button-primary bg-[--primary-blue] text-white hover:bg-[--secondary-blue];
-}
-
-.button-outline {
-  @apply button-primary bg-transparent text-[--primary-blue] border-2 border-[--primary-blue] ;
-}
-
-.description{
-  @apply text-base xl:text-xl font-[500] leading-normal mb-4
-}
-
-/*Header*/
-.nav-menu {
-  @apply fixed z-[55] -right-full top-0 bg-[--primary-yellow] w-full h-screen transition-transform duration-300 ease-in-out
-  flex flex-col items-start space-x-0 xl:space-x-8 pt-8 pb-1 pl-8 xl:flex-row xl:items-center xl:pt-0 xl:pl-0;
-}
-
-.nav-menu-open {
-  @apply translate-x-[-100%];
-}
-
-.hamburger-button {
-  @apply relative flex items-center justify-center w-10 h-10 cursor-pointer transition-all duration-300;
-}
-
-.hamburger-button svg {
-  @apply text-white transition-transform duration-300;
-}
-
-@media (min-width: 80rem) {
-  .nav-menu {
-    @apply static transform-none right-auto z-auto bg-transparent w-auto h-auto transition-none;
+  .flex-base{
+    @apply flex gap-4; 
   }
 
-  .nav-menu-open {
-    @apply transform-none;
+  .button-viva {
+  @apply inline-block w-full xl:w-[320px] h-[64px];
+  @apply py-4 px-8 rounded-sm;
+  @apply flex items-center justify-center;
+  @apply text-[16px] font-[800] transition-all duration-300 text-center;
+  @apply no-underline hover:no-underline;
   }
 
-  .hamburger-button {
-    @apply hidden;
+  .button-viva-fill {
+  @apply button-viva;
+  @apply bg-[--primary-blue] hover:bg-[--secondary-blue];
+  @apply text-white;
   }
-}
 
-.nav-menu-link {
-  @apply text-[--primary-blue] text-3xl hover:text-[--primary-blue] pb-8 xl:text-white xl:hover:text-yellow-400 xl:text-base xl:pb-0 font-medium;
-}
+  .button-viva-outline {
+  @apply button-viva;
+  @apply bg-transparent;
+  @apply border-2 border-[--primary-blue];
+  @apply text-[--primary-blue];
+  }
 
-/* Hero Section */
-.hero-section {
-  @apply bg-[--primary-blue] text-white;
-}
+  .text-viva {
+  @apply text-[16px] xl:text-[18px] font-[400];
+  @apply leading-[24px] xl:leading-[30px];
+  font-family: 'Roboto', system-ui, sans-serif; 
+  }
 
-.hero-title{
-  @apply title pl-6;
-}
+  .text-viva-sm {
+  @apply text-viva;
+  @apply text-[14px];
+  }
 
-.hero-title::before {
-  @apply before-title bg-[--primary-yellow];
-}
+  .text-viva-bg {
+  @apply text-viva;
+  @apply text-[16px] xl:text-[20px];
+  }
 
-/* Steps Section */
-.steps-section {  
-  padding: calc(var(--header-height)) 0 0;
-}
-@media (min-width: 80rem) {  
-  .steps-section {
-    padding: calc(var(--header-height) + 2rem) 0 2rem;
-  }  
-}
+  .text-viva-xl {
+  @apply text-viva;
+  @apply text-[20px];
+  }
 
-.steps-section .container {
-  @apply xl:rounded-xl bg-[--primary-yellow] p-8 xl:p-16;
-}
-
-.store-badges {
-  @apply flex gap-4 mt-4 mb-12;
-}
-
-.app-steps {
-  @apply flex md:grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 my-8 relative;
-  @apply overflow-x-auto overflow-y-hidden snap-x snap-mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;  /* Firefox */
-  -ms-overflow-style: none;  /* IE and Edge */
-}
-
-/* Hide scrollbar for Chrome, Safari and Opera */
-.app-steps::-webkit-scrollbar {
-  @apply hidden;
-}
-
-.step-item {
-  @apply flex-none w-[280px] md:w-auto flex flex-col items-center text-center relative;
-  @apply snap-center;
-}
-
-.step-image {
-  @apply w-full max-w-[220px] h-auto;
-}
-
-/* Alô Doutor Section */
-.alo-doutor-section {
-  @apply  bg-white;
-}
-
-.alo-doutor-list {
+  .list-viva {
   @apply list-none;
-}
+  }
 
-.alo-doutor-list li {
-  @apply text-base xl:text-xl text-[--text-dark] font-[500] leading-normal mb-4 pl-6 relative;
-}
+  .list-viva li {
+  @apply text-viva pl-6 relative;
+  }
 
-.alo-doutor-list li::before {
+  .list-viva li::before {
   @apply text-[--primary-blue] absolute left-0 font-bold text-2xl content-['•'];
+  }
 }
 
-.alo-doutor-image {
-  @apply rounded-lg shadow-md;
-}
-
-/* Farmácias Section */
-.farmacias-section {
-  @apply bg-[--primary-gray];
-}
-
-.pharmacy-grid {
-  @apply grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6 mt-8;
-}
-
-.pharmacy-grid.initial {
-  @apply mb-4;
-}
-
-.pharmacy-grid.additional {
-  @apply mt-0;
-}
-
-.pharmacy-card{
-  @apply items-center justify-center rounded-lg transition-transform duration-300 hover:-translate-y-[5px];
-}
-
-.pharmacy-card-flex {
-  @apply pharmacy-card flex;
-}
-
-.pharmacy-card-md {
-  @apply  pharmacy-card hidden md:flex;
-}
-
-.pharmacy-card-additional-md{
-  @apply pharmacy-card flex md:hidden;
-}
-
-.pharmacy-card-lg {
-  @apply pharmacy-card hidden lg:flex;
-}
-
-.pharmacy-card-additional-lg{
-  @apply pharmacy-card flex lg:hidden;
-}
-
-.pharmacy-card-xl {
-  @apply pharmacy-card hidden xl:flex;
-}
-
-.pharmacy-card-additional-xl{
-  @apply pharmacy-card flex xl:hidden;
-}
-
-.pharmacy-card img, .pharmacy-card-md img, .pharmacy-card-lg img, .pharmacy-card-xl img {
-  @apply w-full max-w-full h-auto object-contain;
-}
-
-/* Pharmacy Accordion Styles */
-.pharmacy-accordion-trigger {
-  @apply w-80 flex justify-center !p-0;
-}
-
-.pharmacy-accordion-trigger svg {
-  @apply hidden;
-}
-
-.farmacias-buttons {
-  @apply flex justify-center gap-4 flex-col sm:flex-row;
-}
-
-/* Exames Section */
-.exames-section {
-  @apply bg-white;
-}
-
-.exames-content {
-  @apply max-w-[600px];
-}
-
-.exames-image-container {
-  @apply relative w-full h-full;
-}
-
-.exames-image {
-  @apply w-full h-auto rounded-lg object-cover;
-}
-
-/* FAQ Section */
-.faq-section {
-  @apply pb-0 bg-[--primary-gray];
-}
-
-.faq-list {
-  @apply mx-auto mb-16;
-}
-
-.faq-item {
-  @apply border-b border-[#E5E5E5] ;
-}
-
-.faq-item [data-state="open"] {
-  @apply border-none;
-}
-
-.faq-item button {
-  @apply pr-8 pl-0;
-}
-
-.faq-item h3 button {
-  @apply text-[--secondary-blue] text-xl font-medium leading-relaxed text-left;
-}
-
-.faq-item h3 button:hover {
-  @apply no-underline;
-}
-
-.faq-item [data-state] svg {
-  @apply text-[--primary-blue] w-5 h-5 transition-transform duration-300;
-}
-
-.faq-item [data-state="open"] svg {
-  @apply rotate-180;
-}
-
-.faq-item [data-state="closed"] svg {
-  @apply rotate-0;
-}
-
-.faq-item [data-state="open"] button {
-  @apply border-none;
-}
-
-.faq-item div[role="region"] {
-  @apply text-gray-600 text-lg leading-relaxed pr-8 pt-4;
-}
-
-/* Contact Section (inside FAQ) */
-.contato-wrapper {
-  @apply bg-[--primary-yellow] py-16 w-full mt-16;
-}
-
-.contato-buttons {
-  @apply flex justify-center gap-4 flex-col sm:flex-row;
-}
-
-/* Footer Section */
-.footer-wrapper {
-  @apply bg-white py-8 w-full;
-}
-
-.footer-company {
-  @apply text-[--text-dark] text-base font-medium mb-3 text-center;
-}
-
-.footer-links {
-  @apply flex flex-col xl:flex-row justify-center gap-6 text-base font-medium text-center xl:text-left;
-}
-
-.footer-link {
-  @apply underline;
-}
 
 /* Remove unused styles */
 #fp-nav,
 .fp-watermark {
   @apply hidden !important;
-}
-
-/* Header Navigation Styles */
-.nav-link {
-  color: var(--primary-blue);
-  font-size: 1rem;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-  color: var(--secondary-blue);
-}
-
-.mobile-nav-link {
-  color: var(--primary-blue);
-  font-size: 1.125rem;
-  font-weight: 500;
-  padding: 1rem 0;
-  border-bottom: 1px solid #E5E5E5;
-  transition: color 0.3s ease;
-  display: block;
-}
-
-.mobile-nav-link:hover {
-  color: var(--secondary-blue);
-}
-
-.header-button {
-  background-color: var(--primary-blue);
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 4px;
-  font-weight: 500;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-}
-
-.header-button:hover {
-  background-color: var(--secondary-blue);
-}
-
-/* Hamburger Menu Styles */
-.hamburger-line {
-  width: 24px;
-  height: 2px;
-  background-color: var(--primary-blue);
-  margin: 3px 0;
-  transition: all 0.3s ease;
 }

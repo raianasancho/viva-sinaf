@@ -10,6 +10,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import styles from './page.module.css';
 
 export default function Home() {
   const sectionsRef = useRef<(HTMLElement | null)[]>([]);
@@ -62,7 +63,6 @@ export default function Home() {
     });
 
     // createNavigation();
-
     return () => {
       // observer.disconnect();
       navigationRef.current?.removeEventListener('click', handleNavClick);
@@ -76,25 +76,22 @@ export default function Home() {
 
   return (
     <>
-      <main className="snap-y snap-mandatory h-[calc(100vh-var(--header-height))] overflow-y-auto relative mt-[--header-height]">
-        <Header />       
+      <main className={styles.main}>
+        <Header />
+
         {/* Hero Section */}
-        <section
-          id="inicio"
-          ref={(el) => (sectionsRef.current[0] = el)}
-          className="section hero-section"
-        >
-          <div className="container flex flex-col md:flex-row items-center justify-between">
-            <div className="md:w-1/2 space-y-6">          
-              <h1 className="title-white before-title-yellow">O Viva chegou para você!</h1>
-              <p className="description text-white">
+        <section id="inicio" className={styles.hero_section} ref={(el) => (sectionsRef.current[0] = el)}>
+          <div className={`container-viva ${styles.hero_container}`}>
+            <div className="md:w-1/2">          
+              <h1 className={styles.title_white_before_yellow}>O Viva chegou para você!</h1>
+              <p className="text-viva-bg text-white mb-4">
                 Parabéns! Você foi convidado para fazer parte de um clube de vantagens
                 em medicamentos, exames e acompanhamento médico por telefone.
               </p>
-              <p className="description text-white">
+              <p className="text-viva-bg text-white mb-4">
                 Clique no botão de loja compatível com seu celular e baixe o app!*
               </p>
-              <div className="flex-base">
+              <div className="flex-base mb-2">
                 <Link href={process.env.NEXT_PUBLIC_PLAY_STORE_URL as string} target='_blank'>
                   <Image
                     src="/google-play.png"
@@ -112,7 +109,7 @@ export default function Home() {
                   />
                 </Link>
               </div>              
-              <p className="text-white">
+              <p className="text-viva-sm text-white">
               *Produto exclusivo para segurados da Sinaf Seguros
               </p>
             </div>
@@ -128,22 +125,16 @@ export default function Home() {
         </section>
 
         {/* Steps Section */}
-        <section
-          id="como-funciona"
-          ref={(el) => (sectionsRef.current[1] = el)}
-          className="section steps-section"
-        >
-          <div className="container">
-            <h2 className="title-blue before-title-gray">
-              Veja como é fácil fazer parte do Viva!
-            </h2>
-            <p className="description text-[--text-dark]">
+        <section id="como-funciona" className={styles.steps_section} ref={(el) => (sectionsRef.current[1] = el)}>
+          <div className={styles.steps_section_container}>
+            <h2 className={styles.title_blue_before_white}>Olha como é fácil fazer parte do Viva!</h2>
+            <p className="text-viva text-[--text-dark]">
               Siga o passo-a-passo e comece a aproveitar os seus benefícios. É muito simples de usar!
             </p>
-            <p className="description text-[--text-dark]">
+            <p className="text-viva text-[--text-dark]">
               Faça o download clicando no botão Google play para celulares Android ou na Apple para celulares Iphone.
             </p>
-            <div className="store-badges">
+            <div className={styles.store_badges}>
               <Link href={process.env.NEXT_PUBLIC_PLAY_STORE_URL as string} className="hover:opacity-90 transition-opacity" target='_blank'>
                 <Image
                   src="/google-play-badge.png"
@@ -164,68 +155,68 @@ export default function Home() {
               </Link>
             </div>
             
-            <div className="app-steps">
-              <div className="step-item">
+            <div className={styles.app_steps}>
+              <div className={styles.step_item}>
                 <Image
                   src="/step-1.png"
                   alt="Passo 1"
                   width={204}
                   height={494}
-                  className="step-image"
+                  className={styles.step_image}
                 />
-                <p className="description text-[--text-dark]">
+                <p className="text-viva text-[--text-dark]">
                   Preencha seus dados para acessar e siga o passo a passo.
                 </p>
               </div>
               
-              <div className="step-item">
+              <div className={styles.step_item}>
                 <Image
                   src="/step-2.png"
                   alt="Passo 2"
                   width={204}
                   height={494}
-                  className="step-image"
+                  className={styles.step_image}
                 />
-                <p className="description text-[--text-dark]">
+                <p className="text-viva text-[--text-dark]">
                   Caso não tenha cadastro, informe sua data de nascimento.
                 </p>
               </div>
               
-              <div className="step-item">
+              <div className={styles.step_item}>
                 <Image
                   src="/step-3.png"
                   alt="Passo 3"
                   width={204}
                   height={494}
-                  className="step-image"
+                  className={styles.step_image}
                 />
-                <p className="description text-[--text-dark]">
+                <p className="text-viva text-[--text-dark]">
                   Confirme se o telefone está correto para recebimento do Código de Acesso.
                 </p>
               </div>
               
-              <div className="step-item">
+              <div className={styles.step_item}>
                 <Image
                   src="/step-4.png"
                   alt="Passo 4"
                   width={204}
                   height={494}
-                  className="step-image"
+                  className={styles.step_image}
                 />
-                <p className="description text-[--text-dark]">
+                <p className="text-viva text-[--text-dark]">
                   Para sua segurança, valide o Código de Acesso e continue para senha.
                 </p>
               </div>
               
-              <div className="step-item">
+              <div className={styles.step_item}>
                 <Image
                   src="/step-5.png"
                   alt="Passo 5"
                   width={204}
                   height={494}
-                  className="step-image"
+                  className={styles.step_image}
                 />
-                <p className="description text-[--text-dark]">  
+                <p className="text-viva text-[--text-dark]">  
                   Crie sua senha, finalize o cadastro na plataforma e aproveite os benefícios.
                 </p>
               </div>
@@ -234,13 +225,9 @@ export default function Home() {
         </section>
 
         {/* Alô Doutor Section */}
-        <section
-          id="alo-doutor"
-          ref={(el) => (sectionsRef.current[2] = el)}
-          className="section alo-doutor-section "
-        >
-          <div className="container flex flex-col md:flex-row items-start gap-8 xl:gap-16">
-            <div className="md:w-[45%]">
+        <section id="alo-doutor" className={styles.alo_doutor_section} ref={(el) => (sectionsRef.current[2] = el)}>
+          <div className={styles.alo_doutor_section_container}>
+            <div className="w-full xl:w-[45%] relative">
               <Image
                 src="/doctor.png"
                 alt="Médico sorrindo"
@@ -248,25 +235,29 @@ export default function Home() {
                 height={536}
                 className="alo-doutor-image w-full"
               />
+              <div className="absolute xl:hidden left-[20px] bottom-[10px] w-[calc(100%-40px)] ">
+                <div className={styles.title_white_before_yellow}>
+                    <h2>Alô Doutor Teleatendimento Viva Sinaf</h2>
+                </div>
+              </div>
             </div>
-            <div className="md:w-[55%]">
-              <div className="title-blue before-title-yellow">
-                  <h2>Alô Doutor</h2>
-                  <h2>Teleatendimento Viva Sinaf</h2>
+            <div className="xl:w-[55%]">
+              <div className={`${styles.title_blue_before_yellow} hidden xl:block`}>
+                  <h2>Alô Doutor Teleatendimento Viva Sinaf</h2>
               </div>
               
-              <p className="description text-[--text-dark]">
+              <p className="text-viva text-[--text-dark] mb-4">
                 O serviço de teleatendimento do Viva Sinaf é uma ferramenta importante para os
                 clientes que precisam de orientação médica do dia-a-dia.
               </p>
 
-              <p className="description text-[--text-dark]">
+              <p className="text-viva text-[--text-dark] mb-4">
                 Funciona 24 horas por dia, 7 dias da semana e é oferecido. No teleatendimento
                 do Viva Sinaf você é atendido por médicos especializados que poderão melhor
                 orientar o que deve ser feito. Você pode usar nas seguintes situações:
               </p>
 
-              <ul className="alo-doutor-list">
+              <ul className="list-viva mb-4">
                 <li>Sempre que tiver dúvidas relacionadas a doenças e sintomas</li>
                 <li>Em caso de dúvidas sobre medicamentos, dosagens e reações adversas</li>
                 <li>Dúvidas sobre gravidez</li>
@@ -277,7 +268,7 @@ export default function Home() {
 
               <Link 
                   href="#como-funciona" 
-                  className="button-fill">
+                  className="button-viva-fill">
                   Quero fazer parte
                 </Link>
             </div>
@@ -285,25 +276,20 @@ export default function Home() {
         </section>
 
         {/* Pharmacies Section */}
-        <section
-          id="farmacias"
-          ref={(el) => (sectionsRef.current[3] = el)}
-          className="section farmacias-section "
-        >
-          <div className="container">
-            <div className="title-blue before-title-yellow">
+        <section id="farmacias" className={styles.farmacias_section} ref={(el) => (sectionsRef.current[3] = el)}>
+          <div className="container-viva">
+            <div className={styles.title_blue_before_yellow}>
               <h2>Descontos em Medicamentos Genéricos</h2>
             </div>
             
-            <p className="description text-[--text-dark]">
+            <p className="text-viva text-[--text-dark] mb-4">
               O Viva Sinaf tem parceria com redes de farmácias de todo o Brasil. São descontos de até 80% em mais de 35 mil farmácias.
-            </p>
-            <p className="description text-[--text-dark]">
+              <br/>
               Essa é uma ótima solução para quem precisa economizar em medicamentos sem abrir mão da qualidade.
             </p>
 
-            <div className="pharmacy-grid initial">
-              <div className="pharmacy-card">
+            <div className={styles.pharmacy_grid_initial}>
+              <div className={styles.pharmacy_card}>
                 <Image
                   src="/pharmacies/pacheco.png"
                   alt="Drogarias Pacheco"
@@ -311,7 +297,7 @@ export default function Home() {
                   height={139}
                 />
               </div>
-              <div className="pharmacy-card">
+              <div className={styles.pharmacy_card}>
                 <Image
                   src="/pharmacies/max.png"
                   alt="Drogarias Max"
@@ -319,7 +305,7 @@ export default function Home() {
                   height={139}
                 />
               </div>
-              <div className="pharmacy-card">
+              <div className={styles.pharmacy_card}>
                 <Image
                   src="/pharmacies/cristal.png"
                   alt="Drogaria Cristal"
@@ -327,7 +313,7 @@ export default function Home() {
                   height={139}
                 />
               </div>
-              <div className="pharmacy-card">
+              <div className={styles.pharmacy_card}>
                 <Image
                   src="/pharmacies/tamoio.png"
                   alt="Drogarias Tamoio"
@@ -338,7 +324,7 @@ export default function Home() {
 
 
               
-              <div className="pharmacy-card-md">
+              <div className={styles.pharmacy_card_md}>
                 <Image
                   src="/pharmacies/atual.png"
                   alt="Drogaria Atual"
@@ -346,7 +332,7 @@ export default function Home() {
                   height={139}
                 />
               </div>
-              <div className="pharmacy-card-md">
+              <div className={styles.pharmacy_card_md}>
                 <Image
                   src="/pharmacies/boa-saude.png"
                   alt="Drogaria Boa Saúde"
@@ -354,7 +340,7 @@ export default function Home() {
                   height={139}
                 />
               </div>
-              <div className="pharmacy-card-lg"> 
+              <div className={styles.pharmacy_card_lg}> 
                 <Image
                   src="/pharmacies/economize.png"
                   alt="Drogaria Economize"
@@ -362,7 +348,7 @@ export default function Home() {
                   height={139}
                 />
               </div>
-              <div className="pharmacy-card-lg">
+              <div className={styles.pharmacy_card_lg}>
                 <Image
                   src="/pharmacies/pague-menos.png"
                   alt="Drogaria Pague Menos"
@@ -370,7 +356,7 @@ export default function Home() {
                   height={139}
                 />
               </div>
-              <div className="pharmacy-card-xl">
+              <div className={styles.pharmacy_card_xl}>
                 <Image
                   src="/pharmacies/ofertao.png"
                   alt="Drogarias Ofertão"
@@ -378,7 +364,7 @@ export default function Home() {
                   height={139}
                 />
               </div>
-              <div className="pharmacy-card-xl">
+              <div className={styles.pharmacy_card_xl}>
                 <Image
                   src="/pharmacies/ultrafarma.png"
                   alt="Drogarias Ultrafarma"
@@ -396,8 +382,8 @@ export default function Home() {
             >
               <AccordionItem value="more-pharmacies" className="border-none">
                 <AccordionContent>
-                  <div className="pharmacy-grid additional">  
-                  <div className="pharmacy-card-additional-md">
+                  <div className={styles.pharmacy_grid_additional}>  
+                  <div className={styles.pharmacy_card_additional_md}>
                     <Image
                       src="/pharmacies/atual.png"
                       alt="Drogaria Atual"
@@ -405,7 +391,7 @@ export default function Home() {
                       height={139}
                     />
                   </div>
-                  <div className="pharmacy-card-additional-md">
+                  <div className={styles.pharmacy_card_additional_md}>
                     <Image
                       src="/pharmacies/boa-saude.png"
                       alt="Drogaria Boa Saúde"
@@ -413,7 +399,7 @@ export default function Home() {
                       height={139}
                     />
                   </div>
-                  <div className="pharmacy-card-additional-lg"> 
+                  <div className={styles.pharmacy_card_additional_lg}> 
                     <Image
                       src="/pharmacies/economize.png"
                       alt="Drogaria Economize"
@@ -421,7 +407,7 @@ export default function Home() {
                       height={139}
                     />
                   </div>
-                  <div className="pharmacy-card-additional-lg">
+                  <div className={styles.pharmacy_card_additional_lg}>
                     <Image
                       src="/pharmacies/pague-menos.png"
                       alt="Drogaria Pague Menos"
@@ -429,7 +415,7 @@ export default function Home() {
                       height={139}
                     />
                   </div>
-                  <div className="pharmacy-card-additional-xl">
+                  <div className={styles.pharmacy_card_additional_xl}>
                     <Image
                       src="/pharmacies/ofertao.png"
                       alt="Drogarias Ofertão"
@@ -437,7 +423,7 @@ export default function Home() {
                       height={139}
                     />
                   </div>
-                  <div className="pharmacy-card-additional-xl">
+                  <div className={styles.pharmacy_card_additional_xl}>
                     <Image
                       src="/pharmacies/ultrafarma.png"
                       alt="Drogarias Ultrafarma"
@@ -445,7 +431,7 @@ export default function Home() {
                       height={139}
                     />
                   </div>
-                  <div className="pharmacy-card">
+                  <div className={styles.pharmacy_card}>
                       <Image
                         src="/pharmacies/ultra-popular.png"
                         alt="Drogarias Ultra Popular"
@@ -453,7 +439,7 @@ export default function Home() {
                         height={139}
                       />
                     </div>           
-                    <div className="pharmacy-card">
+                    <div className={styles.pharmacy_card}>
                       <Image
                         src="/pharmacies/mundial.png"
                         alt="Drogarias Mundial"
@@ -461,7 +447,7 @@ export default function Home() {
                         height={139}
                       />
                     </div>           
-                    <div className="pharmacy-card">
+                    <div className={styles.pharmacy_card}>
                       <Image
                         src="/pharmacies/preco-popular.png"
                         alt="Farmácia Preço Popular"
@@ -469,7 +455,7 @@ export default function Home() {
                         height={139}
                       />
                     </div>           
-                    <div className="pharmacy-card">
+                    <div className={styles.pharmacy_card}>
                       <Image
                         src="/pharmacies/farmelhor.png"
                         alt="Drogarias Farmelhor"
@@ -477,7 +463,7 @@ export default function Home() {
                         height={139}
                       />
                     </div>           
-                    <div className="pharmacy-card">
+                    <div className={styles.pharmacy_card}>
                       <Image
                         src="/pharmacies/retiro.png"
                         alt="Drogaria Retiro"
@@ -485,7 +471,7 @@ export default function Home() {
                         height={139}
                       />
                     </div>           
-                    <div className="pharmacy-card">
+                    <div className={styles.pharmacy_card}>
                       <Image
                         src="/pharmacies/viva-mais.png"
                         alt="Viva Mais Drogarias"
@@ -493,7 +479,7 @@ export default function Home() {
                         height={139}
                       />
                     </div>
-                    <div className="pharmacy-card">
+                    <div className={styles.pharmacy_card}>
                       <Image
                         src="/pharmacies/city-farma.png"
                         alt="City Farma"
@@ -501,7 +487,7 @@ export default function Home() {
                         height={139}
                       />
                     </div>
-                    <div className="pharmacy-card">
+                    <div className={styles.pharmacy_card}>
                       <Image
                         src="/pharmacies/ocean-farma.png"
                         alt="Ocean Farma"
@@ -509,7 +495,7 @@ export default function Home() {
                         height={139}
                       />
                     </div>
-                    <div className="pharmacy-card">
+                    <div className={styles.pharmacy_card}>
                       <Image
                         src="/pharmacies/legitima.png"
                         alt="Drogarias Legítima"
@@ -517,7 +503,7 @@ export default function Home() {
                         height={139}
                       />
                     </div>
-                    <div className="pharmacy-card">
+                    <div className={styles.pharmacy_card}>
                       <Image
                         src="/pharmacies/brasileiras.png"
                         alt="Drogarias Brasileiras"
@@ -525,7 +511,7 @@ export default function Home() {
                         height={139}
                       />
                     </div>
-                    <div className="pharmacy-card">
+                    <div className={styles.pharmacy_card}>
                       <Image
                         src="/pharmacies/droga-news.png"
                         alt="Droga News"
@@ -533,7 +519,7 @@ export default function Home() {
                         height={139}
                       />
                     </div>
-                    <div className="pharmacy-card">
+                    <div className={styles.pharmacy_card}>
                       <Image
                         src="/pharmacies/mais-barato.png"
                         alt="Drogarias Mais Barato"
@@ -541,7 +527,7 @@ export default function Home() {
                         height={139}
                       />
                     </div>
-                    <div className="pharmacy-card">
+                    <div className={styles.pharmacy_card}>
                       <Image
                         src="/pharmacies/farmahall.png"
                         alt="FarmaHall"
@@ -549,7 +535,7 @@ export default function Home() {
                         height={139}
                       />
                     </div>
-                    <div className="pharmacy-card">
+                    <div className={styles.pharmacy_card}>
                       <Image
                         src="/pharmacies/m2.png"
                         alt="M2"
@@ -557,7 +543,7 @@ export default function Home() {
                         height={139}
                       />
                     </div>
-                    <div className="pharmacy-card">
+                    <div className={styles.pharmacy_card}>
                       <Image
                         src="/pharmacies/nova-rede.png"
                         alt="Nova Rede Drogarias"
@@ -565,7 +551,7 @@ export default function Home() {
                         height={139}
                       />
                     </div>
-                    <div className="pharmacy-card">
+                    <div className={styles.pharmacy_card}>
                       <Image
                         src="/pharmacies/carioca.png"
                         alt="Drogarias Carioca"
@@ -573,7 +559,7 @@ export default function Home() {
                         height={139}
                       />
                     </div>
-                    <div className="pharmacy-card">
+                    <div className={styles.pharmacy_card}>
                       <Image
                         src="/pharmacies/cesar.png"
                         alt="Drogaria César"
@@ -581,7 +567,7 @@ export default function Home() {
                         height={139}
                       />
                     </div>
-                    <div className="pharmacy-card">
+                    <div className={styles.pharmacy_card}>
                       <Image
                         src="/pharmacies/expresso.png"
                         alt="Expressa"
@@ -589,7 +575,7 @@ export default function Home() {
                         height={139}
                       />
                     </div>
-                    <div className="pharmacy-card">
+                    <div className={styles.pharmacy_card}>
                       <Image
                         src="/pharmacies/farma-unica.png"
                         alt="Farma Única"
@@ -597,7 +583,7 @@ export default function Home() {
                         height={139}
                       />
                     </div>
-                    <div className="pharmacy-card">
+                    <div className={styles.pharmacy_card}>
                       <Image
                         src="/pharmacies/povao.png"
                         alt="Drogarias Povão"
@@ -607,13 +593,13 @@ export default function Home() {
                     </div>
                   </div>
                 </AccordionContent>
-                <div className="farmacias-buttons">
-                  <AccordionTrigger className="button-primary button-outline pharmacy-accordion-trigger">
+                <div className={styles.farmacias_buttons}>
+                  <AccordionTrigger className={`button-viva-outline ${styles.pharmacy_accordion_trigger}`}>
                     {isAccordionOpen ? "Ver menos" : "Ver mais"}
                   </AccordionTrigger>
                   <Link 
                     href="#como-funciona" 
-                    className="button-fill">
+                    className="button-viva-fill">
                     Quero fazer parte
                   </Link>
                 </div>    
@@ -624,106 +610,95 @@ export default function Home() {
 
         {/* Lab Tests Section */}
         <section
-          id="exames"
-          ref={(el) => (sectionsRef.current[4] = el)}
-          className="section exames-section "
-        >
-          <div className="container flex flex-col flex-col-reverse md:flex-row items-start gap-1">
-            <div className="md:w-[55%]">
-              <div className="exames-content">
-                <div className="title-blue before-title-yellow">                  
-                    <h2>Desconto em exames</h2>
-                    <h2>Laboratoriais e de Imagem</h2>                  
+          id="exames" className={styles.exames_section}ref={(el) => (sectionsRef.current[4] = el)}>
+          <div className={styles.exames_container}>
+            <div className="w-full xl:w-[55%]">
+              <div className={styles.exames_content}>
+                <div className={`${styles.title_blue_before_yellow} hidden xl:block`}>                  
+                    <h2>Desconto em exames Laboratoriais e de Imagem</h2>
                 </div>
                 
-                <p className="description text-[--text-dark]">
+                <p className="text-viva text-[--text-dark] mb-4">
                   O Viva Sinaf, em parceria com a rede Bronstein, oferece descontos de até 50% em
                   toda a rede de laboratórios da marca.
                 </p>
 
-                <p className="description text-[--text-dark]">
+                <p className="text-viva text-[--text-dark] mb-4">
                   A parceria com laboratórios de todo o Brasil permite que os beneficiários do Viva
                   Sinaf tenham acesso a exames de alta qualidade com preços acessíveis.
                 </p>
 
                 <Link 
                   href="#como-funciona" 
-                  className="button-fill">
+                  className="button-viva-fill">
                   Quero fazer parte
                 </Link>
               </div>
             </div>
 
-            <div className="md:w-[45%]">
-              <div className="exames-image-container">
+            <div className="w-full xl:w-[45%] relative">
+              <div className={styles.exames_image_container}>
                 <Image
                   src="/lab-exam.png"
                   alt="Exame laboratorial"
                   width={536}
                   height={536}
-                  className="exames-image"
+                  className={styles.exames_image}
                 />
+              </div>
+              <div className="absolute xl:hidden left-[20px] bottom-[30%] w-[calc(100%-40px)] ">
+                <div className={styles.title_white_before_yellow}>
+                    <h2>Desconto em exames Laboratoriais e de Imagem</h2>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* FAQ Section */}
-        <section
-          id="faq"
-          ref={(el) => (sectionsRef.current[5] = el)}
-          className="section flex-col faq-section "
-        >
-          <div className="container">
-            <div className="title-blue before-title-yellow">
+        <section id="faq" ref={(el) => (sectionsRef.current[5] = el)} className={styles.faq_section}>
+          <div className="container-viva py-16">
+            <div className={styles.title_blue_before_yellow}>
               <h2>Perguntas Frequentes</h2>
             </div>
             
-            <div className="faq-list">
+            <div className={styles.faq_list}>
               <Accordion type="single" collapsible className="w-full">
-                <AccordionItem value="item-1" className="faq-item">
-                  <AccordionTrigger>Para quem é o Viva Sinaf?</AccordionTrigger>
+                <AccordionItem value="item-1" className={styles.faq_item}>
+                  <AccordionTrigger className={`text-viva-xl ${styles.faq_title}`}>Para quem é o Viva Sinaf?</AccordionTrigger>
                   <AccordionContent>
-                    <p>O Viva Sinaf é destinado aos segurados e dependentes da Sinaf Seguros.</p>
+                    <p className='text-viva text-[--text-dark]'>O Viva Sinaf é destinado aos segurados e dependentes da Sinaf Seguros.</p>
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="item-2" className="faq-item">
-                  <AccordionTrigger>
-                  O que é um clube de vantagens?
-                  </AccordionTrigger>
+                <AccordionItem value="item-2" className={styles.faq_item}>
+                  <AccordionTrigger className={`text-viva-xl ${styles.faq_title}`}>O que é um clube de vantagens?</AccordionTrigger>
                   <AccordionContent>
-                    <p>Um clube de vantagens, como o Viva Sinaf, é um programa que oferece diversos benefícios exclusivos para seus membros.</p>                  
-                    <p>Esses benefícios podem ser usufruídos a qualquer momento com a utilização do aplicativo Viva Sinaf.</p>
+                    <p className='text-viva text-[--text-dark]'>Um clube de vantagens, como o Viva Sinaf, é um programa que oferece diversos benefícios exclusivos para seus membros.</p>                  
+                    <p className='text-viva text-[--text-dark]'>Esses benefícios podem ser usufruídos a qualquer momento com a utilização do aplicativo Viva Sinaf.</p>
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="item-3" className="faq-item">
-                  <AccordionTrigger>
-                    Como envio convite para os meus dependentes?
-                  </AccordionTrigger>
+                <AccordionItem value="item-3" className={styles.faq_item}>
+                  <AccordionTrigger className={`text-viva-xl ${styles.faq_title}`}>Como envio convite para os meus dependentes?</AccordionTrigger>
                   <AccordionContent>
-                    <p>Ao se cadastrar no aplicativo, o titular pode enviar o convite aos seus dependentes acessando a área “minha conta” e clicando em “dependentes”.</p>  
-                    <p>Os dependentes recebem o convite por whatsapp e já podem se cadastrar e acessar o aplicativo.</p>
+                    <p className='text-viva text-[--text-dark]'>Ao se cadastrar no aplicativo, o titular pode enviar o convite aos seus dependentes acessando a área “minha conta” e clicando em “dependentes”.</p>  
+                    <p className='text-viva text-[--text-dark]'>Os dependentes recebem o convite por whatsapp e já podem se cadastrar e acessar o aplicativo.</p>
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="item-4" className="faq-item">
-                  <AccordionTrigger>
-                    Quais benefícios já estão disponíveis no Viva Sinaf?
-                  </AccordionTrigger>
+                <AccordionItem value="item-4" className={styles.faq_item}>
+                  <AccordionTrigger className={`text-viva-xl ${styles.faq_title}`}>Quais benefícios já estão disponíveis no Viva Sinaf?</AccordionTrigger>
                   <AccordionContent>
-                    <p>Já estão disponíveis para uso imediato o “Alô Doutor”, além de diversos descontos em exames laboratoriais e de imagens na rede Bronstein e descontos em farmácias.</p>
+                    <p className='text-viva text-[--text-dark]'>Já estão disponíveis para uso imediato o “Alô Doutor”, além de diversos descontos em exames laboratoriais e de imagens na rede Bronstein e descontos em farmácias.</p>
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="item-5" className="faq-item">
-                  <AccordionTrigger>
-                  O que é um aconselhamento médico por telefone?
-                  </AccordionTrigger>
+                <AccordionItem value="item-5" className={styles.faq_item}>
+                  <AccordionTrigger className={`text-viva-xl ${styles.faq_title}`}>O que é um aconselhamento médico por telefone?</AccordionTrigger>
                   <AccordionContent>
-                    <p>É uma primeira orientação médica que pode ser realizada nos seguintes casos:</p>
-                    <ul className='list-disc list-inside'>
+                    <p className='text-viva text-[--text-dark]'>É uma primeira orientação médica que pode ser realizada nos seguintes casos:</p>
+                    <ul className='list-viva'>
                       <li>Sempre que tiver dúvidas relacionadas a doenças e sintomas;</li>
                       <li>Quando tiver dúvidas sobre medicações, dosagens e reações adversas;</li>
                       <li>Gestantes podem tirar dúvidas sobre gravidez;</li>
@@ -736,22 +711,20 @@ export default function Home() {
               </Accordion>
             </div>
 
-            <Link 
-                  href="#como-funciona" 
-                  className="button-fill">
-                  Quero fazer parte
-                </Link>
+            <div className="flex justify-center">
+              <Link href="#como-funciona" className="button-viva-fill">Quero fazer parte</Link>
+            </div>            
           </div>
 
           {/* Contato */}       
-          <div className="contato-wrapper">
-            <div className="container">
-              <h2 className="title-blue text-center pr-6">Ficou alguma dúvida?</h2>
-              <p className="description text-[--text-dark] text-center">Se você ainda tem alguma dúvida, fale com nosso suporte.</p>
-              <div className="contato-buttons">
+          <div className={styles.contato_wrapper}>
+            <div className="container-viva">
+              <h2 className={styles.contato_title_center}>Ficou alguma dúvida?</h2>
+              <p className={`text-viva ${styles.contato_text_center}`}>Se você ainda tem alguma dúvida, fale com nosso suporte.</p>
+              <div className={styles.contato_buttons}>
                 <Link 
                   href="#" 
-                  className="button-outline"
+                  className="button-viva-outline"
                   onClick={(e) => {
                     if (window.innerWidth < 1280) { // xl breakpoint
                       e.preventDefault();
@@ -764,41 +737,37 @@ export default function Home() {
                 >
                   Falar com o Atendimento
                 </Link>
-                <Link 
-                  href="#como-funciona" 
-                  className="button-fill">
-                  Quero fazer parte
-                </Link>
+                <Link href="#como-funciona" className="button-viva-fill">Quero fazer parte</Link>
               </div>
-              <p className={`text-xl font-bold text-[--text-dark] text-center mt-4 transition-opacity duration-300 ${showContactText ? '' : 'hidden'}`}>
+              <p className={`${styles.contato_info} ${showContactText ? '' : 'hidden'} font-bold`}>
               0800 702 9930
               </p>
-              <p className={`text-[--text-dark] text-center mt-4 transition-opacity duration-300 ${showContactText ? '' : 'hidden'}`}>
+              <p className={`${styles.contato_info} ${showContactText ? '' : 'hidden'}`}>
                 Atendimento disponível de segunda a sexta feira das 8h às 19h - exceto feriados
               </p>
             </div>
           </div>   
           
           {/* Footer */}       
-          <footer className="footer-wrapper">
-            <div className="container">
-              <p className="footer-company">
+          <footer className={styles.footer_wrapper}>
+            <div className="container-viva">
+              <p className="text-viva text-center">
                 VIVA SINAF SISTEMAS DE BENEFÍCIOS S.A. - CNPJ/ME 17.073.568/0001-35
               </p>
-              <div className="footer-links">
+              <div className={styles.footer_links}>
                 <a 
                   href="mailto:atendimento.vivasinaf@vivasinaf.com.br" 
-                  className="footer-link">
+                  className="text-viva underline">
                   atendimento.vivasinaf@vivasinaf.com.br
                 </a>
                 <a 
                   href="https://vivasinaf.com.br/politica-de-privacidade/" 
-                  className="footer-link" target='_blank'>
+                  className="text-viva underline" target='_blank'>
                   Política de Privacidade
                 </a>
                 <a 
                   href="https://vivasinaf.com.br/termo/" 
-                  className="footer-link" target='_blank'>
+                  className="text-viva underline" target='_blank'>
                   Termo de Consentimento para Tratamento de Dados Pessoais
                 </a>
               </div>

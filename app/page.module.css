@@ -1,0 +1,268 @@
+.main{
+    @apply snap-y snap-mandatory;
+    @apply h-[calc(100vh-var(--header-height))];
+    @apply overflow-y-auto relative mt-[--header-height];
+}
+.section {
+  @apply py-8 xl:py-16 flex items-center relative;
+}
+.hero_section {
+    @apply section;
+    @apply bg-[--primary-blue] text-white;
+}
+.hero_container{
+    @apply flex flex-col md:flex-row items-center justify-between;
+} 
+.title_viva {
+    @apply text-[28px] xl:text-[38px] font-[800] leading-snug;
+    @apply relative mb-4 pl-6;
+} 
+.title_white{
+    @apply title_viva text-white;
+}  
+  .title_blue{
+    @apply title_viva text-[--primary-blue];
+  }
+  .before_title {
+    @apply content-[''];
+    @apply w-[5px] h-[80%];
+    @apply inline-block absolute top-[10%] left-0;
+    @apply rounded;
+  }
+  .before_title_yellow::before {
+    @apply before_title bg-[--primary-yellow];
+  }
+  .before_title_gray::before {
+    @apply before_title bg-[--primary-gray];
+  }
+  .title_white_before_yellow{
+    @apply title_white before_title_yellow;
+  }
+  .title_blue_before_white{
+    @apply title_blue before_title_gray;
+  }
+  .title_blue_before_yellow{
+    @apply title_blue before_title_yellow;
+  }
+  
+/* Steps Section */
+.steps_section {
+    @apply section;
+    @apply py-0 xl:py-16;
+}
+.steps_section_container {
+    @apply container-viva;
+    @apply xl:rounded-xl bg-[--primary-yellow] p-8 xl:p-16;
+  }
+  .store_badges {
+    @apply flex gap-4 mt-4 mb-12;
+  }
+    .app_steps {
+    @apply flex md:grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 my-8 relative;
+    @apply overflow-x-auto overflow-y-hidden snap-x snap-mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+  }
+  
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .app_steps::-webkit-scrollbar {
+    @apply hidden;
+  }
+  
+  .step_item {
+    @apply flex-none w-[280px] md:w-auto flex flex-col items-center text-center relative;
+    @apply snap-center;
+  }
+  
+  .step_image {
+    @apply w-full max-w-[220px] h-auto;
+  }
+  
+/* Alô Doutor Section */
+.alo_doutor_section {
+    @apply section;
+    @apply  bg-white;
+  }
+  
+.alo_doutor_section_container {
+    @apply container-viva;
+    @apply flex flex-col md:flex-row items-start gap-8 xl:gap-16;
+  }
+  .alo_doutor_image {
+    @apply rounded-lg shadow-md;
+  }
+    
+/* Farmácias Section */
+.farmacias_section {
+    @apply section;
+    @apply bg-[--primary-gray];
+  }
+  
+  .pharmacy_grid {
+    @apply grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6 mt-8;
+  }
+  
+  .pharmacy_grid_initial {
+    @apply pharmacy_grid;
+    @apply mb-4;
+  }
+  
+  .pharmacy_grid_additional {
+    @apply pharmacy_grid;
+    @apply mt-0;
+  }
+  
+  .pharmacy_card{
+    @apply items-center justify-center rounded-lg transition-transform duration-300 hover:-translate-y-[5px];
+  }
+  
+  .pharmacy_card_flex {
+    @apply pharmacy_card flex;
+  }
+  
+  .pharmacy_card_md {
+    @apply pharmacy_card hidden md:flex;
+  }
+  
+  .pharmacy_card_additional_md{
+    @apply pharmacy_card flex md:hidden;
+  }
+  
+  .pharmacy_card_lg {
+    @apply pharmacy_card hidden lg:flex;
+  }
+  
+  .pharmacy_card_additional_lg{
+    @apply pharmacy_card flex lg:hidden;
+  }
+  
+  .pharmacy_card_xl {
+    @apply pharmacy_card hidden xl:flex;
+  }
+  
+  .pharmacy_card_additional_xl{
+    @apply pharmacy_card flex xl:hidden;
+  }
+  
+  .pharmacy_card img, .pharmacy_card_md img, .pharmacy_card_lg img, .pharmacy_card_xl img {
+    @apply w-full max-w-full h-auto object-contain;
+  }
+  
+/* Pharmacy Accordion Styles */
+.pharmacy_accordion_trigger {
+    @apply w-80 flex justify-center !p-0;
+  }
+  
+  .pharmacy_accordion_trigger svg {
+    @apply hidden;
+  }
+  
+  .farmacias_buttons {
+    @apply flex justify-center gap-4 flex-col sm:flex-row;
+  }
+  
+    /* Exames Section */
+.exames_section {
+    @apply section;
+    @apply bg-white;
+  }
+  
+.exames_container {
+    @apply container-viva;
+    @apply flex flex-col flex-col-reverse md:flex-row items-start gap-1;
+  }
+  .exames_content {
+    @apply max-w-[600px];
+  }
+  
+  .exames_image_container {
+    @apply relative w-full h-full;
+  }
+  
+  .exames_image {
+    @apply w-full h-auto rounded-lg object-cover;
+  }
+  
+  
+/* FAQ Section */
+.faq_section {
+    @apply section;
+    @apply flex-col py-0 bg-[--primary-gray];
+  }
+  
+  .faq_list {
+    @apply mx-auto mb-16;
+  }
+  
+  .faq_item {
+    @apply border-b border-[#E5E5E5] ;
+  }
+
+  .faq_title{
+    @apply font-[500] text-[--text-dark] no-underline hover:no-underline;
+  }
+  
+  .faq_item [data-state="open"] {
+    @apply border-none;
+  }
+  
+  .faq_item button {
+    @apply pr-8 pl-0;
+  }
+  
+  .faq_item h3 button {
+    @apply text-[--secondary-blue] text-xl font-medium leading-relaxed text-left;
+  }
+  
+  .faq_item h3 button:hover {
+    @apply no-underline;
+  }
+  
+  .faq_item [data-state] svg {
+    @apply text-[--primary-blue] w-5 h-5 transition-transform duration-300;
+  }
+  
+  .faq_item [data-state="open"] svg {
+    @apply rotate-180;
+  }
+  
+  .faq_item [data-state="closed"] svg {
+    @apply rotate-0;
+  }
+  
+  .faq_item [data-state="open"] button {
+    @apply border-none;
+  }
+  
+  .faq_item div[role="region"] {
+    @apply text-gray-600 text-lg leading-relaxed pr-8 pt-4;
+  }
+  
+
+/* Contact Section (inside FAQ) */
+.contato_wrapper {
+@apply bg-[--primary-yellow] py-16 w-full;
+}
+.contato_buttons {
+@apply flex justify-center gap-4 flex-col sm:flex-row;
+}
+.contato_title_center{
+    @apply title_blue;
+    @apply text-center pr-6;
+}
+.contato_text_center{
+    @apply text-[--text-dark] text-center;
+}
+.contato_info{
+    @apply text-xl text-[--text-dark] text-center mt-4 transition-opacity duration-300;
+}
+
+
+/* Footer Section */
+.footer_wrapper {
+    @apply bg-white py-8 w-full;
+  }
+  .footer_links {
+    @apply flex flex-col xl:flex-row justify-center gap-2 xl:gap-6 text-center xl:text-left;
+  }

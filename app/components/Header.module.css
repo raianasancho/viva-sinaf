@@ -1,0 +1,45 @@
+.header{
+    @apply fixed top-0 left-0 right-0 z-30 bg-[--primary-blue];
+}
+.header_nav{
+    @apply flex items-center justify-between h-[70px]
+}
+.logo{
+    @apply flex items-center self-start mt-[5px];
+}
+.logo_img{
+    @apply h-10 w-auto;
+}
+.nav_menu {
+    @apply fixed xl:static top-0 z-[55] xl:z-auto -right-full xl:right-auto;
+    @apply w-full xl:w-auto h-screen xl:h-auto;
+    @apply bg-[--primary-yellow] xl:bg-transparent;
+    @apply transition-transform duration-300 ease-in-out xl:transform-none xl:transition-none;
+    @apply flex flex-col xl:flex-row items-start xl:items-center;
+    @apply space-x-0 xl:space-x-8 pt-8 xl:pt-0 pb-1 pl-8 xl:pl-0;
+}  
+.nav_menu_open {
+    @apply translate-x-[-100%] xl:transform-none;
+}
+.nav_menu_link {
+    @apply text-[--primary-blue] xl:text-white;
+    @apply hover:text-[--primary-blue]  xl:hover:text-yellow-400;
+    @apply text-[25px] xl:text-[15px] font-[500];
+    @apply mb-4 xl:mb-0;
+    font-family: 'Roboto', system-ui, sans-serif; 
+}
+.hamburger_button {
+    @apply relative z-[100] text-white;
+    @apply flex xl:hidden items-center justify-center;
+    @apply w-8 h-8;
+    @apply cursor-pointer transition-all duration-300;
+}
+.hamburger_button_svg {
+    @apply text-white transition-transform duration-300 w-10 h-10;
+}
+.button_header{
+    @apply bg-[--primary-yellow] hover:bg-yellow-500;
+    @apply text-center text-[15px] xl:text-[16px] text-[--primary-blue] font-[800] leading-[20px];
+    @apply px-4 py-2 ml-2 transition-colors inline-block;
+    @apply rounded;
+}
