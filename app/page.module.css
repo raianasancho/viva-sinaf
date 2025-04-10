@@ -51,7 +51,6 @@
     @apply py-0 xl:py-16;
 }
 .steps_section_container {
-    @apply container-viva;
     @apply xl:rounded-xl bg-[--primary-yellow] p-8 xl:p-16;
   }
   .store_badges {
@@ -86,7 +85,6 @@
   }
   
 .alo_doutor_section_container {
-    @apply container-viva;
     @apply flex flex-col md:flex-row items-start gap-8 xl:gap-16;
   }
   .alo_doutor_image {
@@ -169,7 +167,6 @@
   }
   
 .exames_container {
-    @apply container-viva;
     @apply flex flex-col flex-col-reverse md:flex-row items-start gap-1;
   }
   .exames_content {

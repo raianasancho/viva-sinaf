@@ -126,7 +126,7 @@ export default function Home() {
 
         {/* Steps Section */}
         <section id="como-funciona" className={styles.steps_section} ref={(el) => (sectionsRef.current[1] = el)}>
-          <div className={styles.steps_section_container}>
+          <div className={`container-viva ${styles.steps_section_container}`}>
             <h2 className={styles.title_blue_before_white}>Olha como é fácil fazer parte do Viva!</h2>
             <p className="text-viva text-[--text-dark]">
               Siga o passo-a-passo e comece a aproveitar os seus benefícios. É muito simples de usar!
@@ -226,7 +226,7 @@ export default function Home() {
 
         {/* Alô Doutor Section */}
         <section id="alo-doutor" className={styles.alo_doutor_section} ref={(el) => (sectionsRef.current[2] = el)}>
-          <div className={styles.alo_doutor_section_container}>
+          <div className={`container-viva ${styles.alo_doutor_section_container}`}>
             <div className="w-full xl:w-[45%] relative">
               <Image
                 src="/doctor.png"
@@ -611,7 +611,7 @@ export default function Home() {
         {/* Lab Tests Section */}
         <section
           id="exames" className={styles.exames_section}ref={(el) => (sectionsRef.current[4] = el)}>
-          <div className={styles.exames_container}>
+          <div className={`container-viva ${styles.exames_container}`}>
             <div className="w-full xl:w-[55%]">
               <div className={styles.exames_content}>
                 <div className={`${styles.title_blue_before_yellow} hidden xl:block`}>                  
