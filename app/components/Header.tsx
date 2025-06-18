@@ -55,7 +55,7 @@ export default function Header() {
             
           </div>
           <div className="flex flex-row gap-2 items-center">
-          <Link href="#como-funciona" className={styles.button_header}>
+          <Link href="https://www.sinaf.com.br/viva-sinaf/" target='_blank' className={styles.button_header}>
             Quero fazer parte
           </Link>
 

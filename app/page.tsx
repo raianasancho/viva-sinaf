@@ -267,7 +267,7 @@ export default function Home() {
               </ul>
 
               <Link 
-                  href="#como-funciona" 
+                  href="https://www.sinaf.com.br/viva-sinaf/" target='_blank'
                   className="button-viva-fill">
                   Quero fazer parte
                 </Link>
@@ -598,7 +598,7 @@ export default function Home() {
                     {isAccordionOpen ? "Ver menos" : "Ver mais"}
                   </AccordionTrigger>
                   <Link 
-                    href="#como-funciona" 
+                    href="https://www.sinaf.com.br/viva-sinaf/" target='_blank'
                     className="button-viva-fill">
                     Quero fazer parte
                   </Link>
@@ -629,7 +629,7 @@ export default function Home() {
                 </p>
 
                 <Link 
-                  href="#como-funciona" 
+                  href="https://www.sinaf.com.br/viva-sinaf/" target='_blank'
                   className="button-viva-fill">
                   Quero fazer parte
                 </Link>
@@ -712,7 +712,7 @@ export default function Home() {
             </div>
 
             <div className="flex justify-center">
-              <Link href="#como-funciona" className="button-viva-fill">Quero fazer parte</Link>
+              <Link href="https://www.sinaf.com.br/viva-sinaf/" target='_blank' className="button-viva-fill">Quero fazer parte</Link>
             </div>            
           </div>
 
@@ -737,7 +737,7 @@ export default function Home() {
                 >
                   Falar com o Atendimento
                 </Link>
-                <Link href="#como-funciona" className="button-viva-fill">Quero fazer parte</Link>
+                <Link href="https://www.sinaf.com.br/viva-sinaf/" target='_blank' className="button-viva-fill">Quero fazer parte</Link>
               </div>
               <p className={`${styles.contato_info} ${showContactText ? '' : 'hidden'} font-bold`}>
               0800 702 9930
