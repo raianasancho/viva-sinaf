@@ -1530,7 +1530,7 @@ export default function Home() {
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="item-4" className={styles.faq_item}>
+                <AccordionItem value="item-6" className={styles.faq_item}>
                   <AccordionTrigger
                     className={`text-viva-xl ${styles.faq_title}`}
                   >
@@ -1545,7 +1545,7 @@ export default function Home() {
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="item-4" className={styles.faq_item}>
+                <AccordionItem value="item-7" className={styles.faq_item}>
                   <AccordionTrigger
                     className={`text-viva-xl ${styles.faq_title}`}
                   >
@@ -1560,7 +1560,7 @@ export default function Home() {
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="item-4" className={styles.faq_item}>
+                <AccordionItem value="item-8" className={styles.faq_item}>
                   <AccordionTrigger
                     className={`text-viva-xl ${styles.faq_title}`}
                   >
@@ -1585,7 +1585,7 @@ export default function Home() {
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="item-4" className={styles.faq_item}>
+                <AccordionItem value="item-9" className={styles.faq_item}>
                   <AccordionTrigger
                     className={`text-viva-xl ${styles.faq_title}`}
                   >
@@ -1601,7 +1601,7 @@ export default function Home() {
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="item-4" className={styles.faq_item}>
+                <AccordionItem value="item-10" className={styles.faq_item}>
                   <AccordionTrigger
                     className={`text-viva-xl ${styles.faq_title}`}
                   >
@@ -1617,7 +1617,7 @@ export default function Home() {
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="item-4" className={styles.faq_item}>
+                <AccordionItem value="item-11" className={styles.faq_item}>
                   <AccordionTrigger
                     className={`text-viva-xl ${styles.faq_title}`}
                   >
@@ -1633,7 +1633,7 @@ export default function Home() {
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="item-4" className={styles.faq_item}>
+                <AccordionItem value="item-12" className={styles.faq_item}>
                   <AccordionTrigger
                     className={`text-viva-xl ${styles.faq_title}`}
                   >
