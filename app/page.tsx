@@ -11,6 +11,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import styles from "./page.module.css";
+import EmblaCarousel from "./components/Slider";
 
 export default function Home() {
   const sectionsRef = useRef<(HTMLElement | null)[]>([]);
@@ -85,57 +86,7 @@ export default function Home() {
           className={styles.hero_section}
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          <div className={`container-viva ${styles.hero_container}`}>
-            <div className="md:w-1/2">
-              <h1 className={styles.title_white_before_yellow}>
-                O Viva chegou para você!
-              </h1>
-              <p className="text-viva-bg text-white mb-4">
-                Parabéns! Você foi convidado para fazer parte de um clube de
-                vantagens em medicamentos, exames e acompanhamento médico por
-                telefone.
-              </p>
-              <p className="text-viva-bg text-white mb-4">
-                Clique no botão de loja compatível com seu celular e baixe o
-                app!*
-              </p>
-              <div className="flex-base mb-2">
-                <Link
-                  href={process.env.NEXT_PUBLIC_PLAY_STORE_URL as string}
-                  target="_blank"
-                >
-                  <Image
-                    src="/google-play.png"
-                    alt="Disponível no Google Play"
-                    width={207}
-                    height={60}
-                  />
-                </Link>
-                <Link
-                  href={process.env.NEXT_PUBLIC_APP_STORE_URL as string}
-                  target="_blank"
-                >
-                  <Image
-                    src="/app-store.png"
-                    alt="Baixar na App Store"
-                    width={207}
-                    height={60}
-                  />
-                </Link>
-              </div>
-              <p className="text-viva-sm text-white">
-                *Produto exclusivo para segurados da Sinaf Seguros
-              </p>
-            </div>
-            <div className="md:w-1/2">
-              <Image
-                src="/app-preview.png"
-                alt="Preview do aplicativo"
-                width={489}
-                height={450}
-              />
-            </div>
-          </div>
+          <EmblaCarousel />
         </section>
 
         {/* Steps Section */}
@@ -184,6 +135,14 @@ export default function Home() {
                 />
               </Link>
             </div>
+            <p className="text-viva text-[--text-dark]">
+              Caso ao entrar na sua loja de aplicativo, você receba a informação
+              que seu aparelho não é compatível com o App,{" "}
+              <a className="underline" href="#">
+                clique aqui
+              </a>{" "}
+              e use nossa versão web.
+            </p>
 
             <div className={styles.app_steps}>
               <div className={styles.step_item}>
@@ -317,7 +276,7 @@ export default function Home() {
               </ul>
 
               <Link
-                href="https://www.sinaf.com.br/viva-sinaf/"
+                href={process.env.NEXT_PUBLIC_QUERO_FAZER_PARTE_URL as string}
                 target="_blank"
                 className="button-viva-fill"
               >
@@ -346,7 +305,15 @@ export default function Home() {
               medicamentos sem abrir mão da qualidade.
             </p>
 
-            <div className={styles.pharmacy_grid_initial}>
+            <div className={styles.pharmacy_grid_xl}>
+              <div className={styles.pharmacy_card}>
+                <Image
+                  src="/pharmacies/venancio.png"
+                  alt="Venâncio"
+                  width={227}
+                  height={139}
+                />
+              </div>
               <div className={styles.pharmacy_card}>
                 <Image
                   src="/pharmacies/pacheco.png"
@@ -379,8 +346,7 @@ export default function Home() {
                   height={139}
                 />
               </div>
-
-              <div className={styles.pharmacy_card_md}>
+              <div className={styles.pharmacy_card}>
                 <Image
                   src="/pharmacies/atual.png"
                   alt="Drogaria Atual"
@@ -388,7 +354,7 @@ export default function Home() {
                   height={139}
                 />
               </div>
-              <div className={styles.pharmacy_card_md}>
+              <div className={styles.pharmacy_card}>
                 <Image
                   src="/pharmacies/boa-saude.png"
                   alt="Drogaria Boa Saúde"
@@ -396,7 +362,7 @@ export default function Home() {
                   height={139}
                 />
               </div>
-              <div className={styles.pharmacy_card_lg}>
+              <div className={styles.pharmacy_card}>
                 <Image
                   src="/pharmacies/economize.png"
                   alt="Drogaria Economize"
@@ -404,7 +370,7 @@ export default function Home() {
                   height={139}
                 />
               </div>
-              <div className={styles.pharmacy_card_lg}>
+              <div className={styles.pharmacy_card}>
                 <Image
                   src="/pharmacies/pague-menos.png"
                   alt="Drogaria Pague Menos"
@@ -412,7 +378,7 @@ export default function Home() {
                   height={139}
                 />
               </div>
-              <div className={styles.pharmacy_card_xl}>
+              <div className={styles.pharmacy_card}>
                 <Image
                   src="/pharmacies/ofertao.png"
                   alt="Drogarias Ofertão"
@@ -420,10 +386,155 @@ export default function Home() {
                   height={139}
                 />
               </div>
-              <div className={styles.pharmacy_card_xl}>
+            </div>
+
+            <div className={styles.pharmacy_grid_lg}>
+              <div className={styles.pharmacy_card}>
                 <Image
-                  src="/pharmacies/ultrafarma.png"
-                  alt="Drogarias Ultrafarma"
+                  src="/pharmacies/venancio.png"
+                  alt="Venâncio"
+                  width={227}
+                  height={139}
+                />
+              </div>
+              <div className={styles.pharmacy_card}>
+                <Image
+                  src="/pharmacies/pacheco.png"
+                  alt="Drogarias Pacheco"
+                  width={227}
+                  height={139}
+                />
+              </div>
+              <div className={styles.pharmacy_card}>
+                <Image
+                  src="/pharmacies/max.png"
+                  alt="Drogarias Max"
+                  width={227}
+                  height={139}
+                />
+              </div>
+              <div className={styles.pharmacy_card}>
+                <Image
+                  src="/pharmacies/cristal.png"
+                  alt="Drogaria Cristal"
+                  width={227}
+                  height={139}
+                />
+              </div>
+              <div className={styles.pharmacy_card}>
+                <Image
+                  src="/pharmacies/tamoio.png"
+                  alt="Drogarias Tamoio"
+                  width={227}
+                  height={139}
+                />
+              </div>
+              <div className={styles.pharmacy_card}>
+                <Image
+                  src="/pharmacies/atual.png"
+                  alt="Drogaria Atual"
+                  width={227}
+                  height={139}
+                />
+              </div>
+              <div className={styles.pharmacy_card}>
+                <Image
+                  src="/pharmacies/boa-saude.png"
+                  alt="Drogaria Boa Saúde"
+                  width={227}
+                  height={139}
+                />
+              </div>
+              <div className={styles.pharmacy_card}>
+                <Image
+                  src="/pharmacies/economize.png"
+                  alt="Drogaria Economize"
+                  width={227}
+                  height={139}
+                />
+              </div>
+            </div>
+
+            <div className={styles.pharmacy_grid_md}>
+              <div className={styles.pharmacy_card}>
+                <Image
+                  src="/pharmacies/venancio.png"
+                  alt="Venâncio"
+                  width={227}
+                  height={139}
+                />
+              </div>
+              <div className={styles.pharmacy_card}>
+                <Image
+                  src="/pharmacies/pacheco.png"
+                  alt="Drogarias Pacheco"
+                  width={227}
+                  height={139}
+                />
+              </div>
+              <div className={styles.pharmacy_card}>
+                <Image
+                  src="/pharmacies/max.png"
+                  alt="Drogarias Max"
+                  width={227}
+                  height={139}
+                />
+              </div>
+              <div className={styles.pharmacy_card}>
+                <Image
+                  src="/pharmacies/cristal.png"
+                  alt="Drogaria Cristal"
+                  width={227}
+                  height={139}
+                />
+              </div>
+              <div className={styles.pharmacy_card}>
+                <Image
+                  src="/pharmacies/tamoio.png"
+                  alt="Drogarias Tamoio"
+                  width={227}
+                  height={139}
+                />
+              </div>
+              <div className={styles.pharmacy_card}>
+                <Image
+                  src="/pharmacies/atual.png"
+                  alt="Drogaria Atual"
+                  width={227}
+                  height={139}
+                />
+              </div>
+            </div>
+
+            <div className={styles.pharmacy_grid_sm}>
+              <div className={styles.pharmacy_card}>
+                <Image
+                  src="/pharmacies/venancio.png"
+                  alt="Venâncio"
+                  width={227}
+                  height={139}
+                />
+              </div>
+              <div className={styles.pharmacy_card}>
+                <Image
+                  src="/pharmacies/pacheco.png"
+                  alt="Drogarias Pacheco"
+                  width={227}
+                  height={139}
+                />
+              </div>
+              <div className={styles.pharmacy_card}>
+                <Image
+                  src="/pharmacies/max.png"
+                  alt="Drogarias Max"
+                  width={227}
+                  height={139}
+                />
+              </div>
+              <div className={styles.pharmacy_card}>
+                <Image
+                  src="/pharmacies/cristal.png"
+                  alt="Drogaria Cristal"
                   width={227}
                   height={139}
                 />
@@ -440,32 +551,179 @@ export default function Home() {
             >
               <AccordionItem value="more-pharmacies" className="border-none">
                 <AccordionContent>
-                  <div className={styles.pharmacy_grid_additional}>
-                    <div className={styles.pharmacy_card_additional_md}>
+                  <div className={`${styles.pharmacy_grid_xl} mb-0`}>
+                    <div className={styles.pharmacy_card}>
                       <Image
-                        src="/pharmacies/atual.png"
-                        alt="Drogaria Atual"
+                        src="/pharmacies/ultrafarma.png"
+                        alt="Drogarias Ultrafarma"
                         width={227}
                         height={139}
                       />
                     </div>
-                    <div className={styles.pharmacy_card_additional_md}>
+                    <div className={styles.pharmacy_card}>
                       <Image
-                        src="/pharmacies/boa-saude.png"
-                        alt="Drogaria Boa Saúde"
+                        src="/pharmacies/ultra-popular.png"
+                        alt="Drogarias Ultra Popular"
                         width={227}
                         height={139}
                       />
                     </div>
-                    <div className={styles.pharmacy_card_additional_lg}>
+                    <div className={styles.pharmacy_card}>
                       <Image
-                        src="/pharmacies/economize.png"
-                        alt="Drogaria Economize"
+                        src="/pharmacies/mundial.png"
+                        alt="Drogarias Mundial"
                         width={227}
                         height={139}
                       />
                     </div>
-                    <div className={styles.pharmacy_card_additional_lg}>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/preco-popular.png"
+                        alt="Farmácia Preço Popular"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/farmelhor.png"
+                        alt="Drogarias Farmelhor"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/retiro.png"
+                        alt="Drogaria Retiro"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/viva-mais.png"
+                        alt="Viva Mais Drogarias"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/city-farma.png"
+                        alt="City Farma"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/ocean-farma.png"
+                        alt="Ocean Farma"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/legitima.png"
+                        alt="Drogarias Legítima"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/brasileiras.png"
+                        alt="Drogarias Brasileiras"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/droga-news.png"
+                        alt="Droga News"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/mais-barato.png"
+                        alt="Drogarias Mais Barato"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/farmahall.png"
+                        alt="FarmaHall"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/m2.png"
+                        alt="M2"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/nova-rede.png"
+                        alt="Nova Rede Drogarias"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/carioca.png"
+                        alt="Drogarias Carioca"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/cesar.png"
+                        alt="Drogaria César"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/expresso.png"
+                        alt="Expressa"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/farma-unica.png"
+                        alt="Farma Única"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/povao.png"
+                        alt="Drogarias Povão"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                  </div>
+
+                  <div className={`${styles.pharmacy_grid_lg} mb-0`}>
+                    <div className={styles.pharmacy_card}>
                       <Image
                         src="/pharmacies/pague-menos.png"
                         alt="Drogaria Pague Menos"
@@ -473,7 +731,7 @@ export default function Home() {
                         height={139}
                       />
                     </div>
-                    <div className={styles.pharmacy_card_additional_xl}>
+                    <div className={styles.pharmacy_card}>
                       <Image
                         src="/pharmacies/ofertao.png"
                         alt="Drogarias Ofertão"
@@ -481,7 +739,429 @@ export default function Home() {
                         height={139}
                       />
                     </div>
-                    <div className={styles.pharmacy_card_additional_xl}>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/ultrafarma.png"
+                        alt="Drogarias Ultrafarma"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/ultra-popular.png"
+                        alt="Drogarias Ultra Popular"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/mundial.png"
+                        alt="Drogarias Mundial"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/preco-popular.png"
+                        alt="Farmácia Preço Popular"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/farmelhor.png"
+                        alt="Drogarias Farmelhor"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/retiro.png"
+                        alt="Drogaria Retiro"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/viva-mais.png"
+                        alt="Viva Mais Drogarias"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/city-farma.png"
+                        alt="City Farma"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/ocean-farma.png"
+                        alt="Ocean Farma"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/legitima.png"
+                        alt="Drogarias Legítima"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/brasileiras.png"
+                        alt="Drogarias Brasileiras"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/droga-news.png"
+                        alt="Droga News"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/mais-barato.png"
+                        alt="Drogarias Mais Barato"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/farmahall.png"
+                        alt="FarmaHall"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/m2.png"
+                        alt="M2"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/nova-rede.png"
+                        alt="Nova Rede Drogarias"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/carioca.png"
+                        alt="Drogarias Carioca"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/cesar.png"
+                        alt="Drogaria César"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/expresso.png"
+                        alt="Expressa"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/farma-unica.png"
+                        alt="Farma Única"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/povao.png"
+                        alt="Drogarias Povão"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                  </div>
+
+                  <div className={`${styles.pharmacy_grid_md} mb-0`}>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/boa-saude.png"
+                        alt="Drogaria Boa Saúde"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/economize.png"
+                        alt="Drogaria Economize"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/pague-menos.png"
+                        alt="Drogaria Pague Menos"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/ofertao.png"
+                        alt="Drogarias Ofertão"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/ultrafarma.png"
+                        alt="Drogarias Ultrafarma"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/ultra-popular.png"
+                        alt="Drogarias Ultra Popular"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/mundial.png"
+                        alt="Drogarias Mundial"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/preco-popular.png"
+                        alt="Farmácia Preço Popular"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/farmelhor.png"
+                        alt="Drogarias Farmelhor"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/retiro.png"
+                        alt="Drogaria Retiro"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/viva-mais.png"
+                        alt="Viva Mais Drogarias"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/city-farma.png"
+                        alt="City Farma"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/ocean-farma.png"
+                        alt="Ocean Farma"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/legitima.png"
+                        alt="Drogarias Legítima"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/brasileiras.png"
+                        alt="Drogarias Brasileiras"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/droga-news.png"
+                        alt="Droga News"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/mais-barato.png"
+                        alt="Drogarias Mais Barato"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/farmahall.png"
+                        alt="FarmaHall"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/m2.png"
+                        alt="M2"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/nova-rede.png"
+                        alt="Nova Rede Drogarias"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/carioca.png"
+                        alt="Drogarias Carioca"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/cesar.png"
+                        alt="Drogaria César"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/expresso.png"
+                        alt="Expressa"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/farma-unica.png"
+                        alt="Farma Única"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/povao.png"
+                        alt="Drogarias Povão"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                  </div>
+
+                  <div className={`${styles.pharmacy_grid_sm} mb-0`}>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/tamoio.png"
+                        alt="Drogarias Tamoio"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/atual.png"
+                        alt="Drogaria Atual"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/boa-saude.png"
+                        alt="Drogaria Boa Saúde"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/economize.png"
+                        alt="Drogaria Economize"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/pague-menos.png"
+                        alt="Drogaria Pague Menos"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
+                      <Image
+                        src="/pharmacies/ofertao.png"
+                        alt="Drogarias Ofertão"
+                        width={227}
+                        height={139}
+                      />
+                    </div>
+                    <div className={styles.pharmacy_card}>
                       <Image
                         src="/pharmacies/ultrafarma.png"
                         alt="Drogarias Ultrafarma"
@@ -658,7 +1338,9 @@ export default function Home() {
                     {isAccordionOpen ? "Ver menos" : "Ver mais"}
                   </AccordionTrigger>
                   <Link
-                    href="https://www.sinaf.com.br/viva-sinaf/"
+                    href={
+                      process.env.NEXT_PUBLIC_QUERO_FAZER_PARTE_URL as string
+                    }
                     target="_blank"
                     className="button-viva-fill"
                   >
@@ -697,7 +1379,7 @@ export default function Home() {
                 </p>
 
                 <Link
-                  href="https://www.sinaf.com.br/viva-sinaf/"
+                  href={process.env.NEXT_PUBLIC_QUERO_FAZER_PARTE_URL as string}
                   target="_blank"
                   className="button-viva-fill"
                 >
@@ -756,13 +1438,14 @@ export default function Home() {
                   <AccordionTrigger
                     className={`text-viva-xl ${styles.faq_title}`}
                   >
-                    O que é um clube de vantagens?
+                    O que é uma Plataforma de serviços em saúde e qualidade de
+                    vida?
                   </AccordionTrigger>
                   <AccordionContent>
                     <p className="text-viva text-[--text-dark]">
-                      Um clube de vantagens, como o Viva Sinaf, é um programa
-                      que oferece diversos benefícios exclusivos para seus
-                      membros.
+                      A Plataforma de serviços em saúde e qualidade de vida,
+                      como o Viva Sinaf, é um programa que oferece diversos
+                      benefícios exclusivos para seus membros.
                     </p>
                     <p className="text-viva text-[--text-dark]">
                       Esses benefícios podem ser usufruídos a qualquer momento
@@ -798,9 +1481,17 @@ export default function Home() {
                   </AccordionTrigger>
                   <AccordionContent>
                     <p className="text-viva text-[--text-dark]">
-                      Já estão disponíveis para uso imediato o “Alô Doutor”,
-                      além de diversos descontos em exames laboratoriais e de
-                      imagens na rede Bronstein e descontos em farmácias.
+                      Desconto em medicamentos genéricos de até 80% em mais de
+                      35 mil farmácias;
+                    </p>
+                    <p className="text-viva text-[--text-dark]">
+                      Desconto em exames laboratoriais e de Imagem de até 50% em
+                      toda rede Bronstein;
+                    </p>
+                    <p className="text-viva text-[--text-dark]">
+                      Aconselhamento médico 24h por dia, sete dias por semana,
+                      para orientações e dúvidas por médicos especializados sem
+                      precisar sair de casa.
                     </p>
                   </AccordionContent>
                 </AccordionItem>
@@ -838,12 +1529,130 @@ export default function Home() {
                     </ul>
                   </AccordionContent>
                 </AccordionItem>
+
+                <AccordionItem value="item-4" className={styles.faq_item}>
+                  <AccordionTrigger
+                    className={`text-viva-xl ${styles.faq_title}`}
+                  >
+                    Como uso o Viva Sinaf pelo WhatsApp?
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-viva text-[--text-dark]">
+                      Basta você dar um oi para a Vivi no número 21 98193 3223,
+                      lembre-se que os serviços do Viva Sinaf através do
+                      WhatsApp da Vivi têm funcionalidades limitadas.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-4" className={styles.faq_item}>
+                  <AccordionTrigger
+                    className={`text-viva-xl ${styles.faq_title}`}
+                  >
+                    Quem é a Vivi?
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-viva text-[--text-dark]">
+                      Vivi é nossa agente virtual no WhatsApp que permite que
+                      você possa usar alguns dos serviços do Viva Sinaf através
+                      deste canal, sem precisar do aplicativo.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-4" className={styles.faq_item}>
+                  <AccordionTrigger
+                    className={`text-viva-xl ${styles.faq_title}`}
+                  >
+                    Tive dificuldade em baixar o aplicativo Viva Benefícios. O
+                    que posso fazer Como uso os serviços caso meu telefone não
+                    seja compatível?
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-viva text-[--text-dark]">
+                      Regularmente as lojas de aplicativos promovem atualizações
+                      nas configurações mínimas dos telefones. Caso quando você
+                      for baixar o App, receba a notificação que seu equipamento
+                      não é compatível, você poderá usar os serviços acessando a
+                      plataforma do Viva Sinaf diretamente da web através do
+                      site:{" "}
+                      <a href="https://app.vivasinaf.com.br">
+                        https://app.vivasinaf.com.br
+                      </a>
+                      , o site vai se comportar como o aplicativo e você terá
+                      acesso a todos os serviços como se estivesse usando o App.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-4" className={styles.faq_item}>
+                  <AccordionTrigger
+                    className={`text-viva-xl ${styles.faq_title}`}
+                  >
+                    Tentei realizar o primeiro acesso e não consegui, o que
+                    posso fazer?
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-viva text-[--text-dark]">
+                      Pode ser algum problema nos seus dados cadastrais e nesse
+                      caso, você pode realizar as devidas correções através da
+                      central de atendimento do Viva Sinaf.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-4" className={styles.faq_item}>
+                  <AccordionTrigger
+                    className={`text-viva-xl ${styles.faq_title}`}
+                  >
+                    Posso usar os descontos em qualquer farmácia?
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-viva text-[--text-dark]">
+                      Não em todas. O Viva Sinaf tem uma rede credenciada de
+                      mais de 35 mil farmácias. No app ou pela Vivi, nossa
+                      assistente virtual, você encontra a lista das farmácias
+                      mais perto de você.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-4" className={styles.faq_item}>
+                  <AccordionTrigger
+                    className={`text-viva-xl ${styles.faq_title}`}
+                  >
+                    Haverá Carência?
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-viva text-[--text-dark]">
+                      Não haverá carência. Os dependentes novos podem ser
+                      incluídos a qualquer momento, mas só terão cobertura e
+                      acesso ao Viva Sinaf no início da vigência do mês
+                      seguinte.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-4" className={styles.faq_item}>
+                  <AccordionTrigger
+                    className={`text-viva-xl ${styles.faq_title}`}
+                  >
+                    Preciso atualizar meu cadastro, como faço?
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-viva text-[--text-dark]">
+                      Entre em contato através da nossa central de
+                      Relacionamento 0800 704 2190, atendimento de segunda a
+                      sexta-feira, das 08h às 19h.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
               </Accordion>
             </div>
 
             <div className="flex justify-center">
               <Link
-                href="https://www.sinaf.com.br/viva-sinaf/"
+                href={process.env.NEXT_PUBLIC_QUERO_FAZER_PARTE_URL as string}
                 target="_blank"
                 className="button-viva-fill"
               >
@@ -869,7 +1678,7 @@ export default function Home() {
                     if (window.innerWidth < 1280) {
                       // xl breakpoint
                       e.preventDefault();
-                      window.location.href = "tel:08007049930";
+                      window.location.href = "tel:08007042190";
                     } else {
                       e.preventDefault();
                       setShowContactText(!showContactText);
@@ -879,7 +1688,7 @@ export default function Home() {
                   Falar com o Atendimento
                 </Link>
                 <Link
-                  href="https://www.sinaf.com.br/viva-sinaf/"
+                  href={process.env.NEXT_PUBLIC_QUERO_FAZER_PARTE_URL as string}
                   target="_blank"
                   className="button-viva-fill"
                 >
@@ -891,7 +1700,7 @@ export default function Home() {
                   showContactText ? "" : "hidden"
                 } font-bold`}
               >
-                0800 704 9930
+                0800 704 2190
               </p>
               <p
                 className={`${styles.contato_info} ${
@@ -913,14 +1722,14 @@ export default function Home() {
               </p>
               <div className={styles.footer_links}>
                 <a
-                  href="https://vivasinaf.com.br/politica-de-privacidade/"
+                  href={process.env.NEXT_PUBLIC_PRIVACY_POLICY_URL as string}
                   className="text-viva underline"
                   target="_blank"
                 >
                   Política de Privacidade
                 </a>
                 <a
-                  href="https://vivasinaf.com.br/termo/"
+                  href={process.env.NEXT_PUBLIC_TERMS_URL as string}
                   className="text-viva underline"
                   target="_blank"
                 >
