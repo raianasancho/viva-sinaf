@@ -158,9 +158,13 @@ export default function Home() {
             <p className="text-viva text-[--text-dark]">
               Caso ao entrar na sua loja de aplicativo, você receba a informação
               que seu aparelho não é compatível com o App,{" "}
-              <a className="underline" href="#">
+              <Link
+                className="underline"
+                href={process.env.NEXT_PUBLIC_SITE_URL as string}
+                target="_blank"
+              >
                 clique aqui
-              </a>{" "}
+              </Link>{" "}
               e use nossa versão web.
             </p>
 
