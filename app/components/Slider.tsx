@@ -8,10 +8,10 @@ import Autoplay from "embla-carousel-autoplay";
 import AutoHeight from "embla-carousel-auto-height";
 
 export default function EmblaCarousel() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [AutoHeight()]);
-  // const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
-  //   Autoplay({ delay: 4000 }),
-  // ]);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
+    Autoplay({ delay: 5000 }),
+    //AutoHeight(),
+  ]);
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
   }, [emblaApi]);
@@ -28,7 +28,7 @@ export default function EmblaCarousel() {
             className={`${styles.embla__slide} bg-[--primary-blue] text-white py-16`}
           >
             <div className={`container-viva ${theme.hero_container}`}>
-              <div className="md:w-2/4 md:pl-8 xl:pl-0">
+              <div className="md:w-2/4 px-8 xl:px-0">
                 <h1 className={theme.title_white_before_yellow}>
                   O Viva Sinaf chegou!
                 </h1>
@@ -114,10 +114,10 @@ export default function EmblaCarousel() {
           </div>
 
           <div
-            className={`${styles.embla__slide} bg-[--primary-gray] text-dark`}
+            className={`${styles.embla__slide} bg-[--primary-gray] text-dark pt-[40px]`}
           >
             <div className={`container-viva ${theme.hero_container}`}>
-              <div className="md:w-2/4 md:p-16 xl:p-0">
+              <div className="md:w-2/4 px-8 xl:px-0">
                 <h1 className={theme.title_dark_before_yellow}>
                   O Viva também está no WhatsApp
                 </h1>
@@ -186,10 +186,10 @@ export default function EmblaCarousel() {
           </div>
 
           <div
-            className={`${styles.embla__slide} bg-[--primary-yellow] imagem-coracao text-dark py-16`}
+            className={`${styles.embla__slide} bg-[--primary-yellow] imagem-coracao text-dark py-[100px] md:py-[100px]`}
           >
             <div className={`container-viva ${theme.hero_container} `}>
-              <div className="md:w-2/4 md:pl-8 xl:pl-0">
+              <div className="md:w-2/4 px-8 xl:px-0">
                 <h1 className={theme.title_dark_before_blue}>
                   Acesse o Viva Sinaf pela web
                 </h1>
