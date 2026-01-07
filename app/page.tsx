@@ -100,12 +100,12 @@ export default function Home() {
               Olha como é fácil fazer parte do Viva!
             </h2>
             <p className="text-viva text-[--text-dark]">
-              Siga o passo-a-passo e comece a aproveitar os seus benefícios. É
+              Siga o passo a passo e comece a aproveitar os seus benefícios. É
               muito simples de usar!
             </p>
             <p className="text-viva text-[--text-dark]">
               Faça o download clicando no botão Google play para celulares
-              Android ou na Apple para celulares Iphone.
+              Android ou na Apple para celulares iPhone.
             </p>
             <div className={styles.store_badges}>
               <Link
@@ -1727,7 +1727,7 @@ export default function Home() {
                   showContactText ? "" : "hidden"
                 }`}
               >
-                Atendimento disponível de segunda a sexta feira das 8h às 19h -
+                Atendimento disponível de segunda a sexta-feira das 8h às 19h -
                 exceto feriados
               </p>
             </div>

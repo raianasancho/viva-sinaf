@@ -65,7 +65,7 @@ export default function EmblaCarousel() {
                   Descontos em medicamentos
                 </p>
                 <p className="text-viva-bg text-white mb-2">
-                  E tem muito mais vindo ai.
+                  E tem muito mais vindo aí.
                 </p>
                 <p className="text-viva-bg text-white mb-4">
                   Clique no botão da loja compatível com seu celular e baixe o
@@ -119,11 +119,11 @@ export default function EmblaCarousel() {
                 <h1 className={theme.title_dark_before_yellow}>
                   O Viva também está no WhatsApp
                 </h1>
-                <p className="text-viva-bg xl:text-[16px] text-dark mb-2">
-                  Fale com a Vivi, a assitente virtual do Viva Sinaf, sempre
+                <p className="text-viva-bg text-dark mb-2">
+                  Fale com a Vivi, a assistente virtual do Viva Sinaf, sempre
                   pronta para te ajudar no WhatsApp.
                 </p>
-                <p className="text-viva-bg xl:text-[16px] text-dark mb-2">
+                <p className="text-viva-bg text-dark mb-2">
                   Agora ficou ainda mais simples acessar seus benefícios:
                 </p>
                 <p className="flex items-baseline text-viva-bg text-dark mb-2">
