@@ -5,6 +5,8 @@
 }
 .embla__container {
   display: flex;
+  align-items: flex-start;
+  transition: height 0.2s;
 }
 .embla__slide {
   flex: 0 0 100%;

@@ -134,6 +134,26 @@ export default function Home() {
                   className="h-auto"
                 />
               </Link>
+
+              <Link
+                href={process.env.NEXT_PUBLIC_SITE_URL as string}
+                target="_blank"
+              >
+                <Image
+                  src="/entrar-pelo-site.png"
+                  alt="Entrar pelo site"
+                  width={180}
+                  height={53}
+                />
+              </Link>
+              <Link href="#" target="_blank">
+                <Image
+                  src="/fale-com-a-vivi.png"
+                  alt="Fale com a Vivi no WhatsApp"
+                  width={180}
+                  height={53}
+                />
+              </Link>
             </div>
             <p className="text-viva text-[--text-dark]">
               Caso ao entrar na sua loja de aplicativo, você receba a informação

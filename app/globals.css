@@ -1,91 +1,97 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --primary-blue: #1B3B6B;
-  --secondary-blue: #092C4C;
-  --primary-yellow: #FFB800;
-  --primary-gray: #F3F1F1;
+  --primary-blue: #1b3b6b;
+  --secondary-blue: #092c4c;
+  --primary-yellow: #ffb800;
+  --primary-gray: #f3f1f1;
   --text-dark: #333333;
   --header-height: 70px;
   --radius: 0.5rem;
-  --font-roboto: "Roboto", sans-serif; 
+  --font-roboto: "Roboto", sans-serif;
 }
 
-@layer base { 
+@layer base {
   * {
     @apply border-border scroll-smooth;
     font-family: var(--font-roboto);
   }
-  
+
   body {
     @apply bg-background text-[--text-dark] bg-white overflow-hidden;
-  } 
-  
+  }
+
   .container-viva {
     @apply max-w-[1200px] mx-auto px-4 w-full;
   }
-  .flex-base{
-    @apply flex gap-4; 
+
+  .imagem-coracao {
+    background-image: url("/coracao-amarelo.svg");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: auto 90%;
+  }
+  .flex-base {
+    @apply flex gap-4;
   }
 
   .button-viva {
-  @apply inline-block w-full xl:w-[320px] h-[64px];
-  @apply py-4 px-8 rounded-sm;
-  @apply flex items-center justify-center;
-  @apply text-[16px] font-[800] transition-all duration-300 text-center;
-  @apply no-underline hover:no-underline;
+    @apply inline-block w-full xl:w-[320px] h-[64px];
+    @apply py-4 px-8 rounded-sm;
+    @apply flex items-center justify-center;
+    @apply text-[16px] font-[800] transition-all duration-300 text-center;
+    @apply no-underline hover:no-underline;
   }
 
   .button-viva-fill {
-  @apply button-viva;
-  @apply bg-[--primary-blue] hover:bg-[--secondary-blue];
-  @apply text-white;
+    @apply button-viva;
+    @apply bg-[--primary-blue] hover:bg-[--secondary-blue];
+    @apply text-white;
   }
 
   .button-viva-outline {
-  @apply button-viva;
-  @apply bg-transparent;
-  @apply border-2 border-[--primary-blue];
-  @apply text-[--primary-blue];
+    @apply button-viva;
+    @apply bg-transparent;
+    @apply border-2 border-[--primary-blue];
+    @apply text-[--primary-blue];
   }
 
   .text-viva {
-  @apply text-[16px] xl:text-[18px] font-[400];
-  @apply leading-[24px] xl:leading-[30px];
-  font-family: 'Roboto', system-ui, sans-serif; 
+    @apply text-[16px] xl:text-[18px] font-[400];
+    @apply leading-[24px] xl:leading-[30px];
+    font-family: "Roboto", system-ui, sans-serif;
   }
 
   .text-viva-sm {
-  @apply text-viva;
-  @apply text-[14px];
+    @apply text-viva;
+    @apply text-[14px];
   }
 
   .text-viva-bg {
-  @apply text-viva;
-  @apply text-[16px] xl:text-[20px];
+    @apply text-viva;
+    @apply text-[16px] xl:text-[20px];
   }
 
   .text-viva-xl {
-  @apply text-viva;
-  @apply text-[20px];
+    @apply text-viva;
+    @apply text-[20px];
   }
 
   .list-viva {
-  @apply list-none;
+    @apply list-none;
   }
 
   .list-viva li {
-  @apply text-viva pl-6 relative;
+    @apply text-viva pl-6 relative;
   }
 
   .list-viva li::before {
-  @apply text-[--primary-blue] absolute left-0 font-bold text-2xl content-['•'];
+    @apply text-[--primary-blue] absolute left-0 font-bold text-2xl content-['•'];
   }
 }
-
 
 /* Remove unused styles */
 #fp-nav,
