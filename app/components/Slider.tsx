@@ -5,12 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import AutoHeight from "embla-carousel-auto-height";
 
 export default function EmblaCarousel() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
     Autoplay({ delay: 5000 }),
-    //AutoHeight(),
   ]);
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
@@ -25,7 +23,7 @@ export default function EmblaCarousel() {
       <div className="embla__viewport" ref={emblaRef}>
         <div className={styles.embla__container}>
           <div
-            className={`${styles.embla__slide} bg-[--primary-blue] text-white py-16`}
+            className={`${styles.embla__slide} bg-[--primary-blue] text-white h-[850px] md:h-[500px] lg:h-[650px]`}
           >
             <div className={`container-viva ${theme.hero_container}`}>
               <div className="md:w-2/4 px-8 xl:px-0">
@@ -114,7 +112,7 @@ export default function EmblaCarousel() {
           </div>
 
           <div
-            className={`${styles.embla__slide} bg-[--primary-gray] text-dark pt-[40px]`}
+            className={`${styles.embla__slide} bg-[--primary-gray] text-dark h-[850px] md:h-[500px] lg:h-[650px]`}
           >
             <div className={`container-viva ${theme.hero_container}`}>
               <div className="md:w-2/4 px-8 xl:px-0">
@@ -186,9 +184,9 @@ export default function EmblaCarousel() {
           </div>
 
           <div
-            className={`${styles.embla__slide} bg-[--primary-yellow] imagem-coracao text-dark py-[100px] md:py-[100px]`}
+            className={`${styles.embla__slide} bg-[--primary-yellow] imagem-coracao text-dark h-[850px] md:h-[500px] lg:h-[650px]`}
           >
-            <div className={`container-viva ${theme.hero_container} `}>
+            <div className={`container-viva ${theme.hero_container}`}>
               <div className="md:w-2/4 px-8 xl:px-0">
                 <h1 className={theme.title_dark_before_blue}>
                   Acesse o Viva Sinaf pela web
