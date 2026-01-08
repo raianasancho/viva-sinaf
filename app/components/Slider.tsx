@@ -8,7 +8,7 @@ import Autoplay from "embla-carousel-autoplay";
 
 export default function EmblaCarousel() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
-    Autoplay({ delay: 5000 }),
+    Autoplay({ delay: 10000 }),
   ]);
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
@@ -157,7 +157,10 @@ export default function EmblaCarousel() {
                   Farmácias com descontos mais próximas
                 </p>
                 <div className="flex-base mb-2">
-                  <Link href="#" target="_blank">
+                  <Link
+                    href={process.env.NEXT_PUBLIC_WHATSAPP_URL as string}
+                    target="_blank"
+                  >
                     <Image
                       src="/fale-com-a-vivi.png"
                       alt="Fale com a Vivi no WhatsApp"

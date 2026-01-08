@@ -146,7 +146,10 @@ export default function Home() {
                   height={53}
                 />
               </Link>
-              <Link href="#" target="_blank">
+              <Link
+                href={process.env.NEXT_PUBLIC_WHATSAPP_URL as string}
+                target="_blank"
+              >
                 <Image
                   src="/fale-com-a-vivi.png"
                   alt="Fale com a Vivi no WhatsApp"
