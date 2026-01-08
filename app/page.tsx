@@ -1565,8 +1565,15 @@ export default function Home() {
                   </AccordionTrigger>
                   <AccordionContent>
                     <p className="text-viva text-[--text-dark]">
-                      Basta você dar um oi para a Vivi no número 21 98193 3223,
-                      lembre-se que os serviços do Viva Sinaf através do
+                      Basta você dar um oi para a Vivi no número{" "}
+                      <Link
+                        href={process.env.NEXT_PUBLIC_WHATSAPP_URL as string}
+                        target="_blank"
+                        className="underline"
+                      >
+                        21 98193 3223
+                      </Link>
+                      , lembre-se que os serviços do Viva Sinaf através do
                       WhatsApp da Vivi têm funcionalidades limitadas.
                     </p>
                   </AccordionContent>
